@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-------------------------------------------------------------------------
+    hey. 
+        since you're the kind of kid that would be looking at this right now,
+    I could probably use your help. I, the current webmaster, will be graduat-
+    ing in spring 2017, and I need an apprentice.
+                        Yours,
+                            Via email,
+                                  - cw 
+                                  - charlesunderscorewindolfatbrowndotedu
+    -------------------------------------------------------------------------->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <% if @title %>
+        <title><%= @title %> - The Indy</title>
+    <% else %>
+        <title>The Indy</title>
+    <% end -%>
+    <% if @og_title && @og_type && @og_image %>
+        <meta property="og:title" content="<%= @og_title %>"/>
+        <meta property="og:type" content="<%= @og_type %>"/>
+        <meta property="og:image" content="<%= @og_image %>"/>
+    <% end %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Roboto+Condensed:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <% if false %>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <% end -%>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= raw("<div class='notice'>#{notice}</div>") if !notice.nil? %>
+<%= raw("<div class='alert'>#{alert}</div>") if !alert.nil? %>

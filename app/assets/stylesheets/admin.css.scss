@@ -1,0 +1,127 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.admin-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding-bottom: 100px;
+    .controls {
+      input {
+        display: inline;
+      }
+      position: fixed;
+      text-align: center;
+      width: 100%;
+      left: 0px;
+      bottom: 0px;
+      background-color: white;
+    }
+    input {
+        display: block;
+        border-radius: 5px;
+        border: 1px solid #999;
+        margin: 0px 0px 5px 0px;
+        padding: 5px 3px;
+    }
+
+    textarea {
+      height: 60px;
+      display: block;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #999;
+      margin: 0px 0px 5px 0px;
+      padding: 5px 3px;
+    }
+
+    .menu {
+      a:hover {
+        text-decoration: none;
+      }
+      h2, h4 {
+        font-size: 4em;
+        line-height: 0.4em;
+        span {
+          display: none;
+          opacity: 0.8;
+          font-size: 0.6em;
+        }
+      }
+      h4 {
+        font-size: 2em;
+      }
+      h2:hover, h4:hover {
+        span {
+          display: inline;
+        }
+      }
+    }
+}
+
+.admin-article-cover {
+  height: 280px;
+  width: 700px;
+  margin-left: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+    .author {
+        cursor: move;
+        text-align: center;
+        top: 80%;
+        position: absolute;
+        left: 50%;
+        width: 500px;
+        margin-left: -250px;
+    }
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  // Cells
+  th,
+  td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+  }
+  th {
+    font-weight: bold;
+  }
+  // Bottom align for column headings
+  thead th {
+    vertical-align: bottom;
+  }
+  // Remove top border from thead by default
+  caption + thead tr:first-child th,
+  caption + thead tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + thead tr:first-child td,
+  thead:first-child tr:first-child th,
+  thead:first-child tr:first-child td {
+    border-top: 0;
+  }
+  // Account for multiple tbody instances
+  tbody + tbody {
+    border-top: 2px solid #ddd;
+  }
+
+  // Nesting
+  .table {
+    background-color: white;
+  }
+}
+
+.table-striped {
+  tbody {
+    > tr:nth-child(odd) > td,
+    > tr:nth-child(odd) > th {
+      background-color: #f9f9f9;
+    }
+  }
+}

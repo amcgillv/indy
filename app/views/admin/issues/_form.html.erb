@@ -1,0 +1,56 @@
+<%= form_for [:admin, @issue] do |f| %>
+  <% if @issue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+      <ul>
+      <% @issue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p style="padding: 10px; border: 1px solid grey; background: #eee;">
+    <b>Note: </b>
+    <br>
+    <% if @new %>
+    You're creating a new issue. 
+    Try creating it without publishing it. The title and document number
+    should auto-fill when you save.
+    <% else %>
+    You're editing an issue. Make sure not to edit the document number
+    field unless you know what you're doing. Although the application
+    will overwrite it on save most of the time anyway.
+    <% end %>
+    <br>
+    The url-slug needs to be pulled from the issuu url. For example, 
+    in this url: "http://issuu.com/theindy/docs/vo29_no1", just grab
+    the "vo29_no1" and enter it into the url_slug field. 
+  </p>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :document_number %>:<br />
+    <%= f.text_field :document_number %>
+  </div>
+  <div class="field">
+    <%= f.label :url_slug %><br />
+    <%= f.text_field :url_slug %>
+  </div>
+  <div class="field">
+    <%= f.label :published %><br />
+    <%= f.check_box :published %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

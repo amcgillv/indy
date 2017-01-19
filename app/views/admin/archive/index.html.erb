@@ -1,0 +1,52 @@
+<%= link_to admin_path do %>
+    <button>Back</button>
+<% end -%>
+<br><br>
+<%= form_tag admin_archive_index_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], :placeholder => "search by title" %>
+<% end %>
+<% if !params[:search].nil? %>
+    results for <b><%= params[:search] %></b> (<%= link_to "clear search", admin_archive_index_path %>) <br>
+<% end %>
+<br>
+<div class="articles">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Category
+            </th>
+            <th width="20%">
+                Date Published
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <% @articles.each do |article| %>
+            <tr>
+                <td>
+                    <%= link_to article.title, admin_archive_path(article) %>
+                </td>
+                <td>
+                    <%= article.author %>
+                </td>
+                <td>
+                    <%= article.category %>
+                </td>
+                <td>
+                    <%= article.wp_post_date.strftime("%b %e, %Y") %>
+                </td>
+                <td>
+                    <%= link_to 'Destroy', admin_archive_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+        <% end -%>
+    </table>
+    <%= will_paginate @articles %>
+</div>

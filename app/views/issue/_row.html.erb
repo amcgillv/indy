@@ -1,0 +1,6 @@
+<div class="issue-row">
+<%= link_to "toc/" + issue.id.to_s do %>
+	<%= image_tag issue.cover %>
+<% end %>
+<%= link_to "<p>read as PDF</p>".html_safe, "i/" + issue.id.to_s, class: "pdf-link" %>
+</div>

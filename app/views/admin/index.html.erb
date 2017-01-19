@@ -1,0 +1,21 @@
+
+<div class="menu">
+    <%= link_to admin_article_index_path do %>
+        <h2>Articles <span>all articles</span></h2>
+    <% end -%>
+    <%= link_to admin_issues_path do %>
+        <h2>Issues <span>uploads from issuu and scribd</span></h2>
+    <% end -%>
+    <%= link_to(:controller => "admin/thelists", :action => "index") do %>
+        <h2>The List <span>upload for "the list"</span></h2>
+    <% end -%>
+    <%= link_to admin_emails_path do %>
+        <h4>Emails <span>the email list</span></h4>
+    <% end -%>
+    <%= link_to admin_archive_index_path do %>
+        <h4>Archive <span>content exported from wordpress</span></h4>
+    <% end -%>
+</div>
+
+<br><br><br><br>
+<%= link_to "Log Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>

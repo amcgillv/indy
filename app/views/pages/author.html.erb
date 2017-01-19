@@ -1,0 +1,20 @@
+<%= render 'layouts/nav' %>
+
+<main class="ting">
+    <% if !params[:n].nil? %>
+        <h1>Articles by <%= raw(params[:n]) %></h1>
+    <% end %>
+
+    <div class="row">
+        <% if @articles %>
+            <h3><%= pluralize(@articles.length, 'article') %> found.</h3>
+            <br>
+            <% @articles.each do |article| %>
+                <%= render 'article/row', article: article, show_cat: true %>
+            <% end -%>
+        <% else %>
+            <h3>0 articles found.</h3>
+        <% end %>
+
+    </div>
+</main>

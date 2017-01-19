@@ -1,0 +1,250 @@
+// Place all the styles related to the article controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// row partial
+.article-row {
+    overflow: hidden;
+    position: relative;
+    width: calc(100% - 160px - 2em;);
+    height: auto;
+    margin-left: 2em;
+    margin-right: 0;
+    margin-bottom: 1em;
+}
+
+
+.article-row.image {
+    padding-left: 160px;
+}
+
+.article-row h2 {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+.article-row h4 {
+    margin-top: -0.1em;
+    margin-bottom: 0.1em;
+}
+
+.mobile-thumb {
+    display: none;
+}
+
+.thumb {
+    height: 100%;
+    position: absolute;
+    left: -1em;
+    top: -1em;;
+    margin: 1em;
+    background-size: cover;
+    background-position: center;
+}
+
+.thumb.image {
+    width: 150px;
+}
+
+.thumb.just-image {
+    width: 100%;
+}
+
+.info {
+    width: calc(100% - 20px);
+    margin: 0;
+}
+
+.info p {
+    margin: 0;
+}
+
+p.meta {
+    font-family: 'favorit', sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.row-image {
+    margin: 0.25em 0em;
+    height: 100px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid transparent;
+}
+// end row partial
+
+
+article {
+    position: absolute;
+    left: 260px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 50px;
+    p {
+        margin: 1em 0.5em;
+    }
+}
+
+
+.mobile-article-title {
+    display:none;
+}
+.article-cover {
+    width: 100%;
+    height: 600px;
+    position: fixed;
+    top: 0px;
+    z-index: -1;
+    .article-cover-header {
+        position: absolute;
+        bottom: 0px;
+        max-width: 650px;
+        text-align: left;
+        left: 50%;
+        margin-left: -325px;
+        color: white;
+        font-family: 'favorit', sans-serif;
+        font-style: italic;
+        margin-bottom: 20px;
+        padding: 0 0.5em;
+        h1 {
+            font-weight: bold;
+            font-style: normal;
+            font-size: 3em;
+            margin: 0.2em 0;
+        }
+    }
+    .article-cover-image {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+}
+
+.zoom {
+    display: inline-block;
+    cursor: move;
+}
+
+.article-content {
+    background-color: white;
+    z-index: 1;
+    h2 {
+        font-family: 'favorit', sans-serif;
+        text-transform: uppercase;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    .article-title {
+        max-width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 0;
+            margin-top: 0.1em;
+            line-height: 1.2;
+        }
+        h3, h4 {
+            font-weight: normal;
+            font-style: italic;
+        }
+        h3 {
+            font-size: 2.3em;
+            margin: -12px 0 -11px 0;
+        }
+        h4 {
+            font-size: 1.3em;
+        }
+        .illustrator {
+             margin-top: -20px;
+        }
+    }
+
+}
+
+.archive {
+    .aligncenter {
+        display: block;
+        margin: 0px auto;
+    }
+}
+
+
+.article-content-first {
+    margin-top: 600px;
+}
+
+.article-content-inner {
+    max-width: 650px;
+    margin: 0px auto 0px auto;
+    position: relative;
+    font-family: 'favorit', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.inner-hero-image {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.inner-normal-image {
+    max-width: 650px;
+    margin: 0px auto 0px auto;
+    padding: 20px 0 20px 0;
+}
+
+.inner-large-image {
+    max-width: 900px;
+    margin: 0px auto 0px auto;
+    padding: 20px 0 20px 0;
+}
+
+article iframe {
+    border: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .article-cover {
+        background-size: 100%;
+        height: 375px;
+    }
+    .article-content {
+        .article-title {
+            h1 {
+                font-size: 3em;
+                margin-bottom: 0.5em;
+            }
+            h3 {
+                font-size: 2em;
+            }
+        }
+    }
+    .nav {
+        display: none;
+    }
+    .article-content-first {
+        margin-top: 375px;
+    }
+    .article-cover-header {
+        display: none;
+    }
+    .mobile-article-title {
+        display: block;
+    }
+}

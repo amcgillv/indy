@@ -1,0 +1,50 @@
+<%= render 'layouts/nav' %>
+
+<article class="ting">
+    <% if @article.has_hero? %>
+        <div class="article-cover" >
+            <div class="article-cover-image" style="background-image: url(<%= @article.hero(:xlarge) %>)"></div>
+            <div class="article-cover-header">
+                <div class="title"><h1><%= @article.title %></h1></div>
+                <div class="author">
+                    <%= raw(@article.hero_caption) %>
+                </div>
+            </div>
+        </div>
+    <div class="article-content article-content-first">
+        <div class="mobile-article-title article-title">
+            <h1 class="uppercase"><%= @article.title %></h1>
+            <h3><%= @article.subtitle %></h3>
+            <h4><%= link_people(@article.by, "/author") %></h4>
+            <% if !@article.illustrator.blank? %>
+                <h4 class="illustrator">Illustration <%= link_people(@article.illustrator, "/illustrator") %></h4>
+            <% end %>
+        </div>
+    <% else %>
+        <div class="article-content">
+            <div class="article-title" style="padding-left:0.5em;padding-right:0.5em;">
+                <h1 class="uppercase"><%= @article.title %></h1>
+                <h3><%= @article.subtitle %></h3>
+                <% if !@article.by.blank? %>
+                    <h4><%= link_people(@article.by, "/author") %></h4>
+                <% end %>
+                <% if !@article.illustrator.blank? %>
+                    <h4 class="illustrator">Illustration <%= link_people(@article.illustrator, "/illustrator") %></h4>
+                <% end %>
+                <h4><%= @article.published_at.strftime("published %B %-d, %Y") %></h4>
+            </div>
+        </div>
+    <div class="article-content">
+    <% end %>
+        <div class="article-content-inner">
+            <%= createtags(@article.body) %>
+        </div>
+    </div>
+
+    <div class="article-content">
+        <div class="article-content-inner">
+            <%= render 'layouts/disqus' %>
+        </div>
+    </div>
+</article>
+

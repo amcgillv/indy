@@ -1,0 +1,54 @@
+
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <b>Title:</b>
+  <%= @issue.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @issue.date %>
+</p>
+
+<p>
+  <b>Document number:</b>
+  <%= @issue.document_number %>
+</p>
+
+<p>
+  <b>Url slug:</b>
+  <%= @issue.url_slug %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%= @issue.published %>
+</p>
+
+<p>
+  <b>Articles:</b>
+  <% if !@issue.articles or @issue.articles.nil? or @issue.articles.empty? %>
+  None '_>'
+  <% else %>
+  <ul style="margin-top:-1em;">
+    <% @issue.articles.each do |article| %>
+  <li><%= link_to article.title, "/admin/article/" + article.id.to_s %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</p>
+
+<p>
+  <b>Cover</b>
+  <%= image_tag @issue.cover %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_issue_path(@issue) %> |
+<%= link_to 'Destroy', [:admin, @issue], method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', admin_issues_path %> |
+<%= link_to "View", "/i/#{@issue.id}", :target => "_blank"  %>
+

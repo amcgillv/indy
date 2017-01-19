@@ -1,0 +1,12 @@
+<%= render 'layouts/nav' %>
+
+<main class="search ting">
+        <% if @articles %>
+            <h1 class='search-count'><%= pluralize(@articles.length, 'article') %> found.</h1>
+            <% @articles.each do |article| %>
+                <%= render 'article/row', article: article, show_cat: false %>
+            <% end -%>
+        <% else %>
+            <h1 class='search-count'>0 articles found.</h1>
+        <% end %>
+</main>

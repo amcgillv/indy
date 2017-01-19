@@ -1,0 +1,21 @@
+<%= render 'layouts/nav' %>
+
+<main class="ting">
+    <% if !params[:n].nil? %>
+        <div class="row section-header">
+            <h1>Illustrations by <%= raw(params[:n]) %></h1>
+        </div>
+    <% end %>
+
+    <div class="row">
+        <% if @articles %>
+            <h3><%= pluralize(@articles.length, 'illustration') %> found.</h3>
+            <br>
+            <% @articles.each do |article| %>
+                <%= render 'article/row', article: article, show_cat: true %>
+            <% end -%>
+        <% else %>
+            <h3>0 illustrations found.</h3>
+        <% end %>
+    </div>
+</main>

@@ -1,0 +1,22 @@
+body {
+    max-width: 650px;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    line-height: 26px;
+    margin: 0px auto;
+}
+
+p {
+    margin: 1em 0.5em;
+}
+
+h2 {
+    font-family: helvetica;
+    text-transform: uppercase;
+    font-size: 1.3em
+}
+
+.aligncenter {
+    display: block;
+    margin: 0px auto;
+}

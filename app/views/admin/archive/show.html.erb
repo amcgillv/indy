@@ -1,0 +1,40 @@
+
+<%= link_to admin_archive_index_path do %>
+    <button>Back</button>
+<% end -%>
+<br><br>
+<%= form_for [:admin, @article] do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+    <%= f.label :illustrator %>
+    <%= f.text_field :illustrator %>
+    <%= f.label :excerpt %>
+    <%= f.text_area :excerpt %>
+    <%= f.label :pullquote %>
+    <%= f.text_area :pullquote %>
+    <%= f.cktext_area :formatted_content, :ckeditor => {:height => 600, :removeButtons => 'NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,FontSize,About'} %>
+    <br>
+    <%= f.label :wp_post_date %>
+    <%= f.datetime_select :wp_post_date, :default => Time.now.in_time_zone("Eastern Time (US & Canada)") %><br>
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+    <%= f.label :creator %>
+    <%= f.text_field :creator %>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+    <%= f.label :post_type %>
+    <%= f.text_field :post_type %>
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+    <%= f.label :wp_post_id %>
+    <%= f.text_field :wp_post_id %>
+    <%= link_to 'Destroy', admin_archive_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="controls"><%= f.submit %> | <%= link_to "Preview", "/a/#{@article.id}", :target => "_blank" %> | <%= link_to "Back", admin_archive_index_path %></div>
+<% end %>

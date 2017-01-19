@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require normalize
+ *= require fonts
+ *= require_self
+ *= require pages
+ *= require admin
+ *= require article
+ *= require issue
+ *= require main
+ *= require pages
+ *= require nav
+ *= require home
+ *= require mobile
+ */
+
+
+img {
+    max-width: 100%;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'favorit', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'favorit', serif;
+    font-weight: normal;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+abbr[title] {
+    border-bottom: 0px dotted;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+.link-like {
+    cursor: pointer;
+}
+
+.link-like:hover {
+    text-decoration: underline;
+}
+
+.notice, .alert {
+    position: fixed;
+    width: 300px;
+    margin-left: -150px;
+    top: 10px;
+    left: 50%;
+    background-color: #FFF;
+    z-index: 2;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0px 0px 13px #8A8A8A;
+    padding: 5px;
+}
+
+.adsbygoogle {
+    display: none !important;    
+}

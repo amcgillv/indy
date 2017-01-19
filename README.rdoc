@@ -1,0 +1,12 @@
+Dear future Indy web editor,
+
+My name is Charlie and I used to have your job. Email me at 
+charliexwindolf@gmail.com if you have any questions or whatever.
+
+This site is kind of a shitshow. It was made by an old Indy web
+editor who I guess wanted to try building a blog with Ruby on
+Rails for his own edification. It worked, but it's kind of tough
+to figure out if you haven't seen Rails before. Ask me whatever.
+
+<3,
+Charlie

@@ -1,0 +1,9 @@
+development:
+  access_key_id: AKIAJB5S5DHTZDJTO34Q
+  secret_access_key: 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
+test:
+  access_key_id: AKIAJB5S5DHTZDJTO34Q
+  secret_access_key: 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
+production:
+  access_key_id: AKIAJB5S5DHTZDJTO34Q
+  secret_access_key: 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

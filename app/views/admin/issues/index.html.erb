@@ -1,0 +1,32 @@
+<%= link_to 'New Issue', new_admin_issue_path %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Cover</th>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Date</th>
+    <th>Published</th>
+    <th></th>
+  </tr>
+
+<% @issues.each do |issue| %>
+  <tr>
+    <% if issue.scribd %>
+      <td><%= link_to [:admin, issue] do %><img src="<%= issue.image_url %>"><% end %></td>
+      <td>Scribd</td>
+    <% else %>
+      <td><%= link_to [:admin, issue] do %><img src="http://image.issuu.com/<%= issue.document_number %>/jpg/page_1_thumb_medium.jpg"><% end %></td>
+      <td>Issuu</td>
+    <% end %>
+    <td><%= link_to issue.title, [:admin, issue] %></td>
+    <td><%= issue.date %></td>
+    <td><%= issue.published ? "Yes" : "No" %></td>
+    <th><%= link_to "edit", edit_admin_issue_path(issue) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Issue', new_admin_issue_path %>

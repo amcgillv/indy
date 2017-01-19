@@ -1,0 +1,34 @@
+
+<%= link_to admin_article_index_path do %>
+    <button>Back</button>
+<% end -%>
+<br><br>
+<%= form_for [:admin, @article] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+    <%= f.label :by %>
+    <%= f.text_field :by %>
+    <%= f.label :illustrator %>
+    <%= f.text_field :illustrator %>
+    <%= f.label :category %>
+    <%= f.select(:category, ['Metro','News','Arts','Science & Technology','Metabolics','Literary','Ephemera', 'Occult', 'Features', 'Interviews'], { :include_blank => true }) %>
+    <br>
+    <%= f.label :excerpt %>
+    <%= f.text_area :excerpt %>
+    <%= f.label :pullquote %>
+    <%= f.text_area :pullquote %>
+    <%= f.cktext_area :body, :ckeditor => {:height => 600, :removeButtons => 'NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,FontSize,About'} %>
+    <br>
+    <%= f.label :published_at %>
+    <%= f.datetime_select :published_at, :default => Time.now.in_time_zone("Eastern Time (US & Canada)") %><br>
+    <%= f.label :published %>?
+    <%= f.check_box :published %>
+    <%= f.label :issue_id %>
+    <%= f.collection_select :issue_id, Issue.order("date DESC"), :id, :title, :prompt => true %><br>
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
+    <%= link_to 'Destroy This Article?', admin_article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="controls"><%= f.submit %> | <%= link_to "Preview", "/#{@article.id}", :target => "_blank" %> | <%= link_to "Back", admin_article_index_path %></div>
+<% end %>

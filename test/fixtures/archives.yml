@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  link: MyString
+  wp_post_id: 1
+  wp_post_date: 2013-04-07 19:44:08
+  content: MyText
+  creator: MyString
+  status: MyString
+  category: MyString
+  author: MyString
+  excerpt: MyText
+  post_type: MyString
+
+two:
+  title: MyString
+  link: MyString
+  wp_post_id: 1
+  wp_post_date: 2013-04-07 19:44:08
+  content: MyText
+  creator: MyString
+  status: MyString
+  category: MyString
+  author: MyString
+  excerpt: MyText
+  post_type: MyString

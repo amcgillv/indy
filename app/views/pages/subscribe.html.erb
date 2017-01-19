@@ -1,0 +1,17 @@
+<%= render 'layouts/nav' %>
+
+<main class="subscribe ting">
+<h2>Give us your email.</h2>
+<%= form_tag email_path, :method => 'get' do %>
+	<%= text_field_tag :first_name, "", placeholder: "First" %>
+	<br>
+	<br>
+	<%=text_field_tag :last_name, "", placeholder: "Last"%>
+	<br>
+	<br>
+    <%= text_field_tag :email, params[:email], :type => "email", required: "required", placeholder: "xxx@aol.com" %>
+    <br>
+    <br>
+    <%= submit_tag "Subscribe" %>
+<% end %>
+</main>

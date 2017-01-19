@@ -1,0 +1,68 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1.search-count {
+	font-weight: lighter;
+}
+
+.static-page h1, .static-page h2 {
+	text-align: center;
+}
+
+.static-page h1 {
+	margin-bottom: 0;
+}
+
+.static-page img {
+	max-width: 750px;
+	width: 100%;
+}
+
+#masthead {
+	margin-top: 4em;
+	text-align: center;
+}
+
+#masthead h4 {
+	margin-bottom: 0.25em;
+}
+
+#masthead p {
+	margin: 0;
+	font-size: 1.25em;
+}
+
+input {
+	width: 250px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.25em;
+    font-family: 'favorit', sans-serif;
+    font-weight: lighter;
+}
+
+.static-page.list {
+	padding: 1em
+}
+
+#list {
+	width: calc(100% - 2em);
+	height: auto;
+}
+
+.subscribe.ting {
+	padding: 1em;
+	text-align: left;
+	input[type=submit] {
+		margin-top: 1em;
+		width: 262px;
+		padding: 0.25em;
+		background-color: #dadada;
+	}
+}
+
+@media (max-width: 768px) {
+
+}
+

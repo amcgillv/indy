@@ -1,0 +1,113 @@
+nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: calc(100% - 250px + 4em);
+    padding: 2em;
+    padding-right: 0em;
+    line-height: 1.4;
+    width: calc(100% - 2em);
+}
+
+#logo {
+	margin-top: -1em;
+	margin-bottom: 1.5em;
+}
+
+#logo img {
+	width: 200px;
+}
+
+nav input, #mobile-nav input {
+	width: 148px;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 0.25em;
+	padding-right: 1.8em;
+	font-family: 'favorit', sans-serif;
+    font-weight: lighter;
+	background-image: image-url('search.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: contain;
+}
+
+input:focus {
+	-webkit-box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
+    -webkit-transition: box-shadow linear 0.2s;
+    -moz-transition: box-shadow linear 0.2s;
+    -ms-transition: box-shadow linear 0.2s;
+    -o-transition: box-shadow linear 0.2s;
+    transition: box-shadow linear 0.2s;
+    outline: none;
+}
+
+nav ul, #mobile-nav ul {
+    font-family: 'favorit', sans-serif;
+    font-weight: normal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+nav li:not(:last-child), #mobile-nav li:not(:last-child) {
+	margin-bottom:0.4em;
+}
+
+nav #issue-breadcrumb {
+	display: block;
+	background: transparent;
+	height: 30px;
+}
+
+nav #issue-thumb {
+	margin-top: -60px;
+	margin-left: -60px;
+	overflow: hidden;
+	border-radius: 50%;
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	z-index: -2;
+	display: inline-block;
+}
+
+nav #issue-thumb img {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+nav #social a:hover {
+	text-decoration: none;
+}
+
+nav #social img, #mobile-nav #social img {
+	width: 30px;
+	display: inline-block;
+	margin-right: 1em;
+}
+
+#ham {
+	display: none;
+}
+
+#mobile-nav {
+    padding-right: 1em;
+    width: 200px;
+    line-height: 1.4;
+	display: none;
+	z-index: 18;
+	top: 0;
+	position: fixed;
+	overflow-y: scroll;
+	height: 100%;
+	text-align: right;
+}
+
+#mobile-breadcrumb {
+	height: calc(0.5em + 31.5px)
+}

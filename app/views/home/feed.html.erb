@@ -1,0 +1,34 @@
+<%= render 'layouts/nav' %>
+
+<main class="feed ting">
+	<h1 class="it"><%= params[:s].nil? ? "Everything" : params[:s] %></h1>
+	<% if !params[:s].nil? && params[:s] == 'Literary' %>
+		<style>
+		div.article-row {
+			margin-top: 5em;
+		}
+		</style>
+		<a href='http://yearlongsummerreading.tumblr.com/'><h1>blog</h1></a>
+
+	<% end %>
+
+	<% @articles.each do |a| %>
+	<%= render 'article/row', article: a, show_cat: params[:s].nil? %>
+	<% end %>
+
+	<div class="pagination">
+		<% if  params[:page].to_i == 2 %>
+		<%= link_to "previous page", feed_path(:s => params[:s]) %>
+		<% elsif !params[:page].nil? %>
+		<%= link_to "previous page", feed_path(:s => params[:s], :page => params[:page].to_i - 1) %>
+		<% end -%>
+
+		<%= " &nbsp;&bull;&nbsp; ".html_safe if !params[:page].nil? && params[:page].to_i < @pages -%>
+
+		<% if params[:page].nil? && params[:page].to_i < @pages %>
+		<%= link_to "next page", feed_path(:s => params[:s], :page => 2)%>
+		<% elsif params[:page].to_i < @pages %>
+		<%= link_to "next page", feed_path(:s => params[:s], :page => params[:page].to_i + 1)%>
+		<% end -%>
+	</div>
+</main>

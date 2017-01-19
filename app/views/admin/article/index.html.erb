@@ -1,0 +1,59 @@
+
+
+<%= link_to admin_path do %>
+    <button>Back</button>
+<% end -%>
+<%= link_to new_admin_article_path do %>
+    <button type="button">Create New Article</button>
+<% end -%>
+<br><br>
+
+<div class="articles">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Published?
+            </th>
+            <th width="20%">
+                Date Published
+            </th>
+        </tr>
+        <% @articles.each do |article| %>
+            <tr>
+                <td>
+                    <% if article.title.blank? %>
+                        <i><%= link_to "No Title", admin_article_path(article) %></i>
+                    <% else %>
+                        <%= link_to article.title, admin_article_path(article) %>
+                    <% end %>
+                </td>
+                <td>
+                    <%= article.by %>
+                </td>
+                <td>
+                    <%= article.category %>
+                </td>
+                <td>
+                    <% if article.published %>
+                        yes
+                    <% else %>
+                        no
+                    <% end %>
+                </td>
+                <td>
+                    <%= article.published_at.strftime("%b %e, %Y") if !article.published_at.nil? %>
+                </td>
+            </tr>
+        <% end -%>
+    </table>
+    <%= will_paginate @articles %>
+</div>

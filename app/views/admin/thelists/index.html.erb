@@ -1,0 +1,14 @@
+<%= form_for [:admin, @thelist] do |f| %>
+    <%= f.label :title %>
+    <%= f.file_field :title %>
+    <% if @thelist.title.exists? %>
+        <%= image_tag @thelist.title(:normal) %>
+    <% end %>
+    <br>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <% if @thelist.image.exists? %>
+        <%= image_tag @thelist.image(:normal) %>
+    <% end %>
+    <div class="controls"><input name="commit" type="submit" value="Update The List"></div>
+<% end %>
