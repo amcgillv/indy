@@ -1,6 +1,8 @@
 [          ] homepage og:metadata
 [          ] update to ruby 2.2.3
-[          ] add X
+[ in prog  ] add X
+                [x] add X field to admin form
+                [ ] go through and populate the DB. (things are tagged with X!)
 [ seems ok ] add Illustrators to search
 [ seems ok ] new fonts
 [          ] remove nav
