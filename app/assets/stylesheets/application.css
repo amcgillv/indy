@@ -33,12 +33,12 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'favorit', sans-serif;
-    font-weight: bold;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
 }
 
 p {
-    font-family: 'favorit', serif;
+    font-family: 'Kings Caslon', serif;
     font-weight: normal;
 }
 

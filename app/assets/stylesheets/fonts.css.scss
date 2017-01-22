@@ -1,54 +1,103 @@
 @font-face {
-    font-family: 'favorit';
-    src: font-url('favorit_heavy.eot');
-    src: font-url('favorit_heavy.eot?#iefix') format('embedded-opentype'),
-         font-url('favorit_heavy.svg#favoritheavy') format('svg');
-    src: font-url('favorit_heavy.woff2') format('woff2'),
-         font-url('favorit_heavy.woff') format('woff');
-    font-weight: bold;
+    font-family:'Avenir';
+    src: url('Avenir Heavy.eot');
+    src: url('Avenir Heavy.eot?#iefix') format('embedded-opentype'),
+         url('Avenir Heavy.woff2') format('woff2'),
+         url('Avenir Heavy.woff') format('woff'),
+         url('Avenir Heavy.svg#Avenir Heavy') format('svg');
+    font-weight: 900;
     font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+000D-FE48;
 }
 
 @font-face {
-    font-family: 'favorit';
-    src: font-url('favorit_italic.eot');
-    src: font-url('favorit_italic.eot?#iefix') format('embedded-opentype'),
-         font-url('favorit_italic.svg#favorititalic') format('svg');
-    src: font-url('favorit_italic.woff2') format('woff2'),
-         font-url('favorit_italic.woff') format('woff');
-    font-weight: normal;
+    font-family:'Avenir';
+    src: url('Avenir Heavy Oblique.eot');
+    src: url('Avenir Heavy Oblique.eot?#iefix') format('embedded-opentype'),
+         url('Avenir Heavy Oblique.woff2') format('woff2'),
+         url('Avenir Heavy Oblique.woff') format('woff'),
+         url('Avenir Heavy Oblique.svg#Avenir Heavy Oblique') format('svg');
+    font-weight: 900;
     font-style: italic;
+    font-stretch: normal;
+    unicode-range: U+000D-FB02;
 }
 
 @font-face {
-    font-family: 'favorit';
-    src: font-url('favorit_light.eot');
-    src: font-url('favorit_light.eot?#iefix') format('embedded-opentype'),
-         font-url('favorit_light.svg#favoritlight') format('svg');
-    src: font-url('favorit_light.woff2') format('woff2'),
-         font-url('favorit_light.woff') format('woff');
-    font-weight: 100;
+    font-family:'Avenir';
+    src: url('Avenir Book.eot');
+    src: url('Avenir Book.eot?#iefix') format('embedded-opentype'),
+         url('Avenir Book.woff2') format('woff2'),
+         url('Avenir Book.woff') format('woff'),
+         url('Avenir Book.svg#Avenir Book') format('svg');
+    font-weight: 400;
     font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-FB02;
 }
 
 @font-face {
-    font-family: 'favorit';
-    src: font-url('favorit_regular.eot');
-    src: font-url('favorit_regular.eot?#iefix') format('embedded-opentype'),
-         font-url('favorit_regular.svg#favorit_regularregular') format('svg');
-    src: font-url('favorit_regular.woff2') format('woff2'),
-         font-url('favorit_regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'favorit';
-    src: url('favorit_light-italic.eot');
-    src: url('favorit_light-italic.eot?#iefix') format('embedded-opentype'),
-         url('favorit_light-italic.svg#favoritlight_italic') format('svg');
-    src: url('favorit_light-italic.woff2') format('woff2'),
-         url('favorit_light-italic.woff') format('woff');
-    font-weight: 100;
+    font-family:'Avenir';
+    src: url('Avenir Book Oblique.eot');
+    src: url('Avenir Book Oblique.eot?#iefix') format('embedded-opentype'),
+         url('Avenir Book Oblique.woff2') format('woff2'),
+         url('Avenir Book Oblique.woff') format('woff'),
+         url('Avenir Book Oblique.svg#Avenir Book Oblique') format('svg');
+    font-weight: 400;
     font-style: italic;
+    font-stretch: normal;
+    unicode-range: U+0020-FB02;
+}
+
+@font-face {
+    font-family:'Kings Caslon';
+    src: url('Kings Caslon Display Italic.eot');
+    src: url('Kings Caslon Display Italic.eot?#iefix') format('embedded-opentype'),
+         url('Kings Caslon Display Italic.woff2') format('woff2'),
+         url('Kings Caslon Display Italic.woff') format('woff'),
+         url('Kings Caslon Display Italic.svg#Kings Caslon Display Italic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    unicode-range: U+0008-FB06;
+}
+
+@font-face {
+    font-family:'Kings Caslon';
+    src: url('Kings Caslon Display.eot');
+    src: url('Kings Caslon Display.eot?#iefix') format('embedded-opentype'),
+         url('Kings Caslon Display.woff2') format('woff2'),
+         url('Kings Caslon Display.woff') format('woff'),
+         url('Kings Caslon Display.svg#Kings Caslon Display') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0008-FB06;
+}
+
+@font-face {
+    font-family:'Kings Caslon';
+    src: url('Kings Caslon Bold.eot');
+    src: url('Kings Caslon Bold.eot?#iefix') format('embedded-opentype'),
+         url('Kings Caslon Bold.woff2') format('woff2'),
+         url('Kings Caslon Bold.woff') format('woff'),
+         url('Kings Caslon Bold.svg#Kings Caslon Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-FB04;
+}
+
+@font-face {
+    font-family:'Kings Caslon';
+    src: url('Kings Caslon Bold Italic.eot');
+    src: url('Kings Caslon Bold Italic.eot?#iefix') format('embedded-opentype'),
+         url('Kings Caslon Bold Italic.woff2') format('woff2'),
+         url('Kings Caslon Bold Italic.woff') format('woff'),
+         url('Kings Caslon Bold Italic.svg#Kings Caslon Bold Italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    unicode-range: U+0020-FB04;
 }
