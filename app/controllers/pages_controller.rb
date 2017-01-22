@@ -46,7 +46,7 @@ class PagesController < ApplicationController
         @issue = Issue.where("date IS NOT NULL").order("date DESC").first
         if !params[:search].blank? && params[:search].length > 1
             search = params[:search]
-            @article_articles = Article.where(:published => true).where('lower(body) LIKE lower(?) OR lower(title) LIKE lower(?) OR lower(by) LIKE lower(?)', "%#{search}%", "%#{search}%", "%#{search}%").order("published_at DESC")
+            @article_articles = Article.where(:published => true).where('lower(body) LIKE lower(?) OR lower(title) LIKE lower(?) OR lower(by) LIKE lower(?) OR lower(illustrator) LIKE lower(?)', "%#{search}%", "%#{search}%", "%#{search}%").order("published_at DESC")
             @archive_articles = Archive.where(:status => 'publish').where('lower(content) LIKE lower(?) OR lower(title) LIKE lower(?) OR lower(author) LIKE lower(?)', "%#{search}%", "%#{search}%", "%#{search}%").order("wp_post_date DESC")
             @articles = @article_articles + @archive_articles
         end
