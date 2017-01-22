@@ -1,67 +1,7 @@
-[x] excise maps
-
-[x] backend
->	[x] issue covers
->>		[x] find where these live
-			-> http://image.issuu.com/{document number}/jpg/page_1.jpg
->>		///////nope! [ ] add :cover_url field to issue model
->>		///////nope! [ ] scrape all old ones
->>		///////nope! [ ] make sure new ones wil scrape too
->	[x] link articles to issues
->>		[x] migration to add has_many and belongs_to or whatever
->>		[x] add backend interface for adding articles to issues
->>		[x] admin: article list in issue show page
->>		[x] articles added to issues. except archive stuff. but wtf is up with that anyway
->	[x] sections referendum
->>		[x] add occult functionality
->>		[x] add lance gloss articles to occult, also add:
-			https://indy-fork.herokuapp.com/admin/article/608
-			https://indy-fork.herokuapp.com/admin/article/326 - some older ones have occult tag, could
-				probably search for that
-		[x] add features too? might require a look through sectionless articles, as well
-			as v.31 articles as they appear in the PDF
-				also search for features tag
-		[x] maybe also interviews? could search "conversation", or usually "the indy" is used for Q
-
-[-] frontend
->	[x] fonts
->	[x] sidebar
->	[x] issues / homepage
->	[x] issue toc page
->	[x] issue PDF page
->	[x] feeds
->	[x] article page
->	[x] about page
->	[x] advertise page
-		- do we still do this? (we don't)
->	[x] search page
-> 	[x] check subscribe thing
->	[x] the fucking list, 
-	[x] social links on homepage
-	[x] authors/illustrators. am i linking to this?
->	[ ] mobile
-		- mobile nav. woof. other stuff should be pretty easy.
-		- mobile article titles suck
-
-lingering things:
-	better link to PDF
-	better list link
-	did Disqus comment counts work? is Disqus still on this thing?
-	does the list load from indy, not indy-dev?
-	how tf does one get the same goddam number of issues to show up per page
-
-testing:
-	articles with no section
-	articles with no title (maybe validate on title?)
-	check all the mobile pages for layout
-
-post-launch
-	[ ] homepage og:metadata
-	[ ] split ephemera and x
-	[ ] split science and tech
-	[x] make category dropdown say "ARTS"
-	[x] make article save redirect not to pages controller
-	[x] image previews are not showing up
-	[x] turn debug mode the fuck off!
-	[ ] update to ruby 2.2.3
-	[x] add mailchimp API hook
+[ ] homepage og:metadata
+[ ] update to ruby 2.2.3
+[ ] add X
+[ ] add Illustrators to search
+[-] new fonts
+[ ] remove nav
+[ ] add header
