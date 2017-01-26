@@ -1,3 +1,6 @@
 <header>
     <h1><%= link_to "TODO", root_path %></h1>
+    <%= form_tag search_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+    <% end %>
 </header>
