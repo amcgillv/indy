@@ -11,7 +11,7 @@
         height: 100%;
     }
 </style>
-<%= render 'layouts/nav' %>
+<%= render 'layouts/header' %>
 <% if @issue.scribd %>
     <iframe src="http://www.scribd.com/embeds/<%= @issue.document_number %>/content?start_page=1&view_mode=scroll"></iframe>
 <% else %>
