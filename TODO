@@ -3,8 +3,9 @@
 [ in prog  ] add X
                 [x] add X field to admin form
                 [ ] go through and populate the DB. (things are tagged with X!)
-[ seems ok ] add Illustrators to search
+[ BROKEN   ] add Illustrators to search
 [ seems ok ] new fonts
 [          ] fix the 500 in issue/create (create?)
 [          ] remove nav
 [          ] add header
+[          ] let the spiders back in
