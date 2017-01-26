@@ -17,6 +17,7 @@
  *= require issue
  *= require main
  *= require pages
+ *= require header
  *= require nav
  *= require home
  *= require mobile
