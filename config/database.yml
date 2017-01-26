@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: indy_transfer
+  database: indy
   pool: 5
   username:
   password:

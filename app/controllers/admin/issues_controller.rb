@@ -49,7 +49,7 @@ class Admin::IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        expire_action(:controller => "/issue", :action => "toc")
+        # expire_action(:controller => "/issue", :action => "toc")
         format.html { redirect_to [:admin, @issue], notice: 'Issue was successfully created.' }
         format.json { render json: @issue, status: :created, location: @issue }
       else
@@ -66,7 +66,7 @@ class Admin::IssuesController < ApplicationController
 
     respond_to do |format|
         if @issue.update_attributes(params[:issue])
-            expire_action(:controller => "/issue", :action => "toc")
+            # expire_action(:controller => "/issue", :action => "toc")
             format.html { redirect_to [:admin, @issue], notice: 'Issue was successfully updated.' }
         else
             format.html { render action: "edit" }
@@ -79,7 +79,7 @@ class Admin::IssuesController < ApplicationController
   def destroy
     @issue = Issue.find(params[:id])
     @issue.destroy
-    expire_action(:controller => "/issue", :action => "toc")
+    # expire_action(:controller => "/issue", :action => "toc")
     respond_to do |format|
       format.html { redirect_to admin_issues_url }
       format.json { head :no_content }
