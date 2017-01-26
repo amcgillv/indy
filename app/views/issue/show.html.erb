@@ -8,7 +8,7 @@
 <% if @issue.scribd %>
     <iframe src="http://www.scribd.com/embeds/<%= @issue.document_number %>/content?start_page=1&view_mode=scroll"></iframe>
 <% else %>
-    <!-- <iframe class="issuu" src="http://issuu.com/theindy/docs/<%= @issue.url_slug %>?mode=window&amp;layout=www.maxmcd.com%2Fissuu%2Fcurrent%2F&amp;backgroundColor=%23ffffff"></iframe> -->
+    <% # we're on issuu here %>
     <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="5b265645-0505-0bad-ce44-62430bea7802">
         <param name="movie" value="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf?mode=mini&documentId=<%= @issue.document_number %>" />
         <param name="allowfullscreen" value="true"/>
