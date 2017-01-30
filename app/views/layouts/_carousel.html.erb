@@ -1,0 +1,10 @@
+<div id="carousel">
+<ul>
+<% issues.each do |i| %>
+    <li class="car">
+        <%= link_to image_tag(i.cover), "toc/" + i.id.to_s %>
+        <%= link_to '<p>read as PDF</p>'.html_safe, "i/" + i.id.to_s %>
+    </li>
+<% end %>
+<ul>
+</div>
