@@ -9,6 +9,10 @@ h1 {
 	padding: 0;
 }
 
+.mobile {
+	display: none;
+}
+
 #social a:hover {
 	text-decoration: none;
 }
@@ -29,7 +33,7 @@ h1 {
 	margin-right: 5em;
 }
 
-input, #mobile-nav input {
+header input, #mobile-nav input {
 	width: 148px;
 	border: 2px solid black;
 	border-radius: 5px;
@@ -43,7 +47,7 @@ input, #mobile-nav input {
 	background-size: contain;
 }
 
-form {
+header form {
 	display: inline;
 	float: right;
 	margin: 5px;
@@ -90,4 +94,129 @@ header input {
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
+}
+
+#hamburger {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	#top-links {
+		display: none;
+	}
+
+	#sections{
+		display: none;
+	}
+
+	header {
+		height: 85px;
+		display: block;
+		vertical-align: text-bottom;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	h2.mobile{
+		display: inline-block;
+		position: absolute;
+		left: 1em;
+		top: 0.7em;
+		margin: 10px;
+		padding:0;
+	}
+
+	body.ham-active {
+		overflow: hidden;
+	}
+
+	.pdf-link {
+		display: none;
+	}
+
+	h1.it {
+		font-size: 2em;
+	}
+
+
+	nav {
+		position: fixed !important;
+		right: 0 !important;
+		height: 60px;
+		box-shadow: 0 0 15px 25px white;
+		// margin-top: -25px;
+		padding: 0.5em 1em;
+		z-index: 11;
+		background-color: white;
+	}
+
+	nav ul, nav #social, nav form {
+		display: none;
+	}
+
+	// scrolly
+	nav.nav-up {
+		margin-top: -250px;
+		-webkit-transition: margin-top linear 0.2s;
+	    -moz-transition: margin-top linear 0.2s;
+	    -ms-transition: margin-top linear 0.2s;
+	    -o-transition: margin-top linear 0.2s;
+	    transition: margin-top linear 0.2s;
+	}
+
+	nav.nav-down {
+		margin-top: -30px;
+		-webkit-transition: margin-top linear 0.2s;
+	    -moz-transition: margin-top linear 0.2s;
+	    -ms-transition: margin-top linear 0.2s;
+	    -o-transition: margin-top linear 0.2s;
+	    transition: margin-top linear 0.2s;
+	}
+	// mobile menu
+	#ham {
+		display: inline-block;
+		position: absolute;
+		right: 1em;
+		top: calc(0.5em + 17px) !important;
+		background-image: image-url('hamburger-150.png');
+		background-size: contain;
+		width: 44px;
+		height: 44px;
+		cursor: pointer;
+		margin-bottom: 10px;
+		vertical-align: top;
+	}
+
+	#ham.x {
+		background-image: image-url('equis-150.png');
+	}
+
+	.ting.ham-active, nav.ham-active {
+		margin-right: 240px;
+		margin-left: -240px;
+	    transition: margin linear 0.2s;
+	}
+
+	.ting.ham-inactive, nav.ham-inactive {
+	    transition: margin linear 0.2s;
+	}
+
+	#hold-mobile-nav {
+		overflow-x: hidden;
+	}
+
+	#mobile-nav.ham-inactive {
+		display: block;
+		right: -240px;
+	    transition: right linear 0.2s;
+	}
+
+	#mobile-nav.ham-active {
+		display: block;
+		left: auto;
+		right: 0.5em;
+	    transition: right linear 0.2s;
+	}
 }
