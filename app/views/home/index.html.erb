@@ -1,5 +1,8 @@
 <%= render 'layouts/header' %>
 
+<%= render 'layouts/carousel', issues: @issues %>
+
+
 <main id="home" class="ting">
 	<% @issues.each do |issue| %>
 		<%= render 'issue/row', issue: issue %>
