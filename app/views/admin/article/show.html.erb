@@ -13,7 +13,7 @@
     <%= f.label :illustrator %>
     <%= f.text_field :illustrator %>
     <%= f.label :category %>
-    <%= f.select(:category, ['Metro','News','Arts','Science & Technology','Metabolics','Literary','Ephemera', 'Occult', 'Features', 'Interviews', 'X'], { :include_blank => true }) %>
+    <%= f.select(:category, ['Metro','News','Arts','Science & Technology','Metabolics','Literary','Ephemera', 'Occult', 'Features', 'Interviews', 'X', 'FTE'], { :include_blank => true }) %>
     <br>
     <%= f.label :excerpt %>
     <%= f.text_area :excerpt %>
@@ -25,6 +25,7 @@
     <%= f.datetime_select :published_at, :default => Time.now.in_time_zone("Eastern Time (US & Canada)") %><br>
     <%= f.label :published %>?
     <%= f.check_box :published %>
+    <%= f.check_box :featured %>
     <%= f.label :issue_id %>
     <%= f.collection_select :issue_id, Issue.order("date DESC"), :id, :title, :prompt => true %><br>
     <%= f.label :tags %>
