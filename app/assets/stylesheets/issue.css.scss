@@ -11,17 +11,11 @@
 }
 
 #carousel {
-    height: 400px;
+    height: 440px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
     background-color: #f2f2f2;
-    // -moz-box-shadow:    inset  0  8px 10px -8px rgba(0,0,0,0.9), 
-    //                     inset  0 -8px 10px -8px rgba(0,0,0,0.9);
-    // -webkit-box-shadow: inset  0  8px 10px -8px rgba(0,0,0,0.9), 
-    //                     inset  0 -8px 10px -8px rgba(0,0,0,0.9);
-    //  box-shadow:        inset  0  8px 10px -8px rgba(0,0,0,0.9), 
-    //                     inset  0 -8px 10px -8px rgba(0,0,0,0.9);
 }
 
 .car {
@@ -31,8 +25,8 @@
     height: 360px;
     background-position: center;
     background-size: contain;
-    margin: 20px;
-    text-align: right;
+    margin: 25px;
+    text-align: center;
     img {
         width: 100%;
         height: 100%;
@@ -54,13 +48,7 @@
         -o-transition: box-shadow linear 0.2s;
         transition: box-shadow linear 0.2s;
     }
-    // pdf link 
-    p {
-        position: absolute;
-        bottom: 5px;
-        right: 20px;
-        text-shadow: 0 0 1em white;
-    }
+    // pdf link
     p:hover {
         text-decoration: underline;
     }
