@@ -8,6 +8,8 @@ class HomeController < ApplicationController
         @thelist = Thelist.find(1)
 		# load page of issues. 20 per page
         @issues = Issue.where(:published => true).where("date IS NOT NULL").order("date DESC")
+        @current_issue = @issues[0]
+        @current_articles = @current_issue.articles
         # paginate
         issues_per_page = 20.0
         @pages = (@issues.length.to_f / issues_per_page).ceil

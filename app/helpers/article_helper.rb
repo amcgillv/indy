@@ -61,7 +61,7 @@ module ArticleHelper
     	else # normal article
     		row_item[:hotlink] = "/#{a.id}"
     		row_item[:author] = link_people(a.by, "/author")
-    		row_item[:excerpt] = raw(a.body.nil? ? "" : removetags(strip_tags(a.body)).split[0..60].join(' ') + " &hellip;")
+    		row_item[:excerpt] = raw(a.body.nil? ? "" : removetags(strip_tags(a.body)).split(/\s+/)[0..60].join(' ') + " &hellip;")
     		row_item[:edit_url] = "/admin/article" + a.id.to_s
     		row_item[:just_image] = !a.first_image_url.blank? && removetags(strip_tags(a.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank?
     		row_item[:date] = a.published_at.to_time.iso8601	
