@@ -1,11 +1,12 @@
 header {
     background-color: white;
-    height: 200px;
+    height: auto;
 }
 
 h1 {
 	text-align: center;
 	font-family: 'Avenir', sans-serif;
+	padding: 0;
 }
 
 #social a:hover {
@@ -24,8 +25,8 @@ h1 {
 }
 
 #top-links {
-	width: 100%;
-	margin-left: 3em;
+	margin-left: 5em;
+	margin-right: 5em;
 }
 
 input, #mobile-nav input {
@@ -45,6 +46,7 @@ input, #mobile-nav input {
 form {
 	display: inline;
 	float: right;
+	margin: 5px;
 }
 
 ul, #mobile-nav ul {
@@ -67,8 +69,9 @@ input:focus {
     outline: none;
 }
 
-#sections li {
+li {
 	display: inline-block;
+	margin: 5px;
 }
 
 #sections {
