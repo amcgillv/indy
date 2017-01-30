@@ -1,23 +1,7 @@
 <%= render 'layouts/header' %>
 
 <main id="home" class="ting">
-	<% @issues.each do |issue| %>
-		<%= render 'issue/row', issue: issue %>
-	<% end %>
 
-	<div class="pagination">
-        <% if  params[:page].to_i == 2 %>
-            <%= link_to "previous page", root_path(:s => params[:s]) %>
-        <% elsif !params[:page].nil? %>
-            <%= link_to "previous page", root_path(:s => params[:s], :page => params[:page].to_i - 1) %>
-        <% end -%>
+    <%= render 'layouts/carousel', issues: @issues %>
 
-        <%= " &nbsp;&bull;&nbsp; ".html_safe if !params[:page].nil? && params[:page].to_i < @pages -%>
-
-        <% if params[:page].nil? && params[:page].to_i < @pages %>
-            <%= link_to "next page", root_path(:s => params[:s], :page => 2)%>
-        <% elsif params[:page].to_i < @pages %>
-            <%= link_to "next page", root_path(:s => params[:s], :page => params[:page].to_i + 1)%>
-        <% end -%>
-    </div>
 </main>

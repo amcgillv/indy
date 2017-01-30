@@ -77,3 +77,17 @@ li {
 #sections {
 	text-align: center;
 }
+
+header input {
+    width: 148px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.25em;
+    padding-right: 1.8em;
+    font-family: 'Avenir', sans-serif;
+    font-weight: lighter;
+    background-image: image-url('search.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+}
