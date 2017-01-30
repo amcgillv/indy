@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160131233438) do
+ActiveRecord::Schema.define(:version => 20170130015025) do
 
   create_table "archives", :force => true do |t|
     t.string   "title"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20160131233438) do
     t.integer  "column_width",      :default => 1
     t.string   "illustrator"
     t.integer  "issue_id"
+    t.boolean  "featured",          :default => false
   end
 
   add_index "articles", ["published"], :name => "index_articles_on_published"
