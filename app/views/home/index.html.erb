@@ -1,25 +1,11 @@
 <%= render 'layouts/header' %>
 
-
+<%= render 'layouts/carousel', issues: @issues %>
 
 <main id="home" class="ting">
 
-    <%= render 'layouts/carousel', issues: @issues %>
 
-    <% 
-        # current issue processing
-        # we have @current_issue, @current_articles
-        # get the FTE
-        fte = (@current_articles.select { |a| a.category == "FTE" })[0]
-        # get the featured articles and the rest
-        featured = @current_articles.select { |a| a.featured }
-        the_rest = @current_articles.reject { |a| a.featured }
-    %>
-
-    <p><%= @current_issue.inspect() %></p>
-    <p><%= fte.inspect() %></p>
-    <p><%= featured.inspect() %></p>
-    <p><%= the_rest.inspect() %></p>
+    <%= render "issue/toc_layout", homepage: true, issue: @current_issue %>
 
 
 </main>

@@ -1,17 +1,7 @@
 <%= render 'layouts/header' %>
 
-<main id="toc" class="ting">
+<main class="ting">
 
-<%= link_to "/i/" + @issue.id.to_s do %>
-	<h1 class="it"><%= @issue.title %></h1>
-<% end %>
-<% last_cat = "" %>
-<% @articles.each do |a| %>
-	<% if a.category != last_cat %>
-		<h3 class="it cat"><%= a.category.upcase %></h3>
-		<% last_cat = a.category %>
-	<% end %>
-	<%= render 'article/box', article: a, show_cat: false %>
-<% end %>
+<%= render 'issue/toc_layout', homepage: false, issue: @issue %>
 
 </main>

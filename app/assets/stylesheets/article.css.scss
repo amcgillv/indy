@@ -3,78 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // row partial
-.article-row {
-    overflow: hidden;
-    position: relative;
-    width: calc(100% - 160px - 2em;);
-    height: auto;
-    margin-left: 2em;
-    margin-right: 0;
-    margin-bottom: 1em;
-}
 
-
-.article-row.image {
-    padding-left: 160px;
-}
-
-.article-row h2 {
-    margin-top: 0em;
-    margin-bottom: 0em;
-}
-
-.article-row h4 {
-    margin-top: -0.1em;
-    margin-bottom: 0.1em;
-}
-
-.mobile-thumb {
-    display: none;
-}
-
-.thumb {
-    height: 100%;
-    position: absolute;
-    left: -1em;
-    top: -1em;;
-    margin: 1em;
-    background-size: cover;
-    background-position: center;
-}
-
-.thumb.image {
-    width: 150px;
-}
-
-.thumb.just-image {
-    width: 100%;
-}
-
-.info {
-    width: calc(100% - 20px);
-    margin: 0;
-}
-
-.info p {
-    margin: 0;
-}
-
-p.meta {
-    font-family: 'Avenir', sans-serif;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 1.1em;
-}
-
-.row-image {
-    margin: 0.25em 0em;
-    height: 100px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    border: 1px solid transparent;
-}
 // end row partial
+
+// box partial
+
+// end box partial
 
 
 article {

@@ -15,6 +15,7 @@
  *= require admin
  *= require article
  *= require issue
+ *= require toc
  *= require main
  *= require pages
  *= require header
@@ -26,6 +27,11 @@
 
 img {
     max-width: 100%;
+}
+
+header, .ting {
+    margin: 0 auto;
+    max-width: 1024px;
 }
 
 body, html {
@@ -41,12 +47,36 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-family: 'Kings Caslon', serif;
     font-weight: normal;
+    font-size: 1.1em;
+    line-height: 26px;
 }
 
 a {
     color: black;
     text-decoration: none;
 }
+
+.caret:before, .caret:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+}
+
+.caret::before {
+    top: 0;
+    left: 0;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+}
+
+.caret::after {
+    bottom: 0;
+    right: 0;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
 
 a:hover {
     text-decoration: underline;

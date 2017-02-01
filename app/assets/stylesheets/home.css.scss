@@ -1,34 +1,7 @@
-main {
-    height: 100%;
-}
-
 main#home {
-    text-align: center;
-}
-
-.issue-row {
-    float: left;
-	margin: 2.5em;
-	text-align: center;
-	max-width: 500px;
+	max-width: 1024px;
 }
 
 
-.issue-row p {
-	margin: 0;
-	margin-top: 0.5em;
-	font-size: 1.25em;
-	font-weight: normal;
-}
 
-.pagination {
-	text-align: center;
-	font-family: 'Avenir', sans-serif;
-	font-weight: normal;
-	font-size: 1.25em;
-	margin-bottom: 2em;
-}
 
-.feed h1 {
-	font-weight: normal;
-}
