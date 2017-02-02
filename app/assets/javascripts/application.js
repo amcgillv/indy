@@ -77,7 +77,8 @@ $(function() {
     // hamburger button
     $(".ting, nav, #mobile-nav").addClass("ham-inactive");
     $("#ham").click(function(e) {
-        $("body, .ting, nav, #mobile-nav").toggleClass("ham-active").toggleClass("ham-inactive");
-        $("#ham").toggleClass("x");
+        // $("body, .ting, nav, #mobile-nav").toggleClass("ham-active").toggleClass("ham-inactive");
+        // $("#ham").toggleClass("x");
+        $(".overlay").toggleClass("full_page_nav");
     });
 });
