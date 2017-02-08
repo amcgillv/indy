@@ -33,11 +33,12 @@
                               : (has_image ? 'image-and-text' : 'just-text')) %>
 
     <%# excerpt! some stuff might not have one, so guard it. %>
-    <%# unless article.body.blank? %>
-        <%# excerpt_len = has_image ? 10 : 20 %>
-        <%# excerpt = strip_tags(article.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..excerpt_len].join(' ') %>
-        <%# unless excerpt.blank? # also need this cuz body could just have an image. %>
-            <!-- <p><%# (excerpt + ' &hellip;').html_safe %></p> -->
-        <%# end %>
-    <%# end %>
+    <% unless article.body.blank? %>
+        <% excerpt_len = has_image ? 10 : 20 %>
+        <% excerpt = strip_tags(article.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..excerpt_len].join(' ') %>
+        <% unless excerpt.blank? # also need this cuz body could just have an image. %>
+            <p><% (excerpt + ' &hellip;').html_safe %></p>
+        <% end %>
+    <% end %>
+    
 </div>

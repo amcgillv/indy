@@ -1,3 +1,5 @@
+require 'nice_bools'
+
 class HomeController < ApplicationController
 
 	# homepage with issues
@@ -11,7 +13,7 @@ class HomeController < ApplicationController
         @current_issue = @issues[0]
         @current_articles = @current_issue.articles
 
-        @feed_articles = Article.where("published_at < ?", @current_issue.date)
+        @feed_articles = Article.where("published_at < ?", @current_issue.date).limit(20)
 
         # paginate
         issues_per_page = 20.0

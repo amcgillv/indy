@@ -11,40 +11,24 @@
     # get the featured articles and the rest, if we're supposed to.
     # reject FTE, which should not be featured!
     fte = (@current_articles.select { |a| a.category == "FTE" })[0]
-    featured = @current_articles.select { |a| a.featured }
-    the_rest = @current_articles.reject { |a| a.featured or a.category == 'FTE' }
+    articles_by_niceness = (@current_articles.reject { |a| a.category == 'FTE' })
+                                            .sort_by{ |a|
+                                -5 * a.featured.to_i +
+                                -(!a.first_image_url.blank?).to_i +
+                                -(!removetags(strip_tags(a.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank?).to_i +
+                                -(!a.subtitle.blank?).to_i
+                            }
 
     # which articles are going in the two big boxes up top? we want
     # ones with images, subtitles, and excerpts that are featured.
-    nice_featured_articles = featured.select{ |a|
-        # has image
-        # and has body text
-        # and has subtitle
-        (!a.first_image_url.blank? and
-         !removetags(strip_tags(a.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank? and
-         !a.subtitle.blank?)
-    }
-    bad_featured_articles = featured.reject{ |a|
-        # has image
-        # and has body text
-        # and has subtitle
-        (!a.first_image_url.blank? and
-         !removetags(strip_tags(a.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank? and
-         !a.subtitle.blank?)
-    }
-    # shuffle around to get better
-    while nice_featured_articles.length < 2 do
-        nice_featured_articles.push bad_featured_articles.pop
-    end
-    while bad_featured_articles.length < 3 do
-        bad_featured_articles.push the_rest.pop
-    end
-    while bad_featured_articles.length > 3 do
-        the_rest.push bad_featured_articles.pop
-    end
+    nice_featured_articles = articles_by_niceness[0..1]
+    bad_featured_articles = articles_by_niceness[2..3]
+    the_rest = articles_by_niceness[4..-1]
 %>
     <div id="current-issue">
+        <%= link_to "/toc/#{@current_issue.id}" do %>
         <h2 style="float:left;"><%= display_title %></h2>
+        <% end %>
         <h2 style="float:right;"><%= display_date %></h2>
         <div class="clearfix"></div>
         <%# FTE box %>
@@ -57,7 +41,7 @@
 
         <div id="top-feat">
         <% nice_featured_articles.each do |a| %>
-            <div id="top-feat-article">
+            <div class="top-feat-article">
                 <br>
                 <%  if a.first_image_url.blank? 
                         bg = ""
@@ -68,9 +52,18 @@
                 <div class="img-holder" <%= bg.html_safe %>>
                 </div>
                 <p class="meta"><%= a.category %></p>
-                <h3><%= a.title %></h3>
-                <% unless a.subtitle.blank? %>
-                    <h4><%= a.subtitle %></h4>
+                <% if a.subtitle.blank? %>
+                    <%= link_to "#{a.id}" do %>
+                        <%# title! everything should have a title. %>
+                        <h3><%= a.title %></h3>
+                    <% end %>
+                <% else %>
+                    <%# subtitle! some stuff might not have one, so we guard it. %>
+                    <%= link_to "#{a.id}" do %>
+                        <%# title! everything should have a title. %>
+                        <h3><%= a.title %></h3>
+                        <h4><%= a.subtitle %></h4>
+                    <% end %>
                 <% end %>
                 <p class="meta">by <%= link_to a.by, "/author?n=#{a.by.html_safe}" %></p>
                 <% excerpt = strip_tags(a.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..20].join(' ') %>
@@ -82,25 +75,35 @@
 
         <div id="low-feat">
         <% bad_featured_articles.each do |a| %>
-            <div id="low-feat-article">
-                <br>
-                <h3><%= a.title %></h3>
-                <% unless a.subtitle.blank? %>
-                    <h4><%= a.subtitle %></h4>
+            <div class="low-feat-article">
+                <p class="meta"><%= link_to a.category, "/feed?s=#{a.category.html_safe}" %></p>
+                <% if a.subtitle.blank? %>
+                    <%= link_to "#{a.id}" do %>
+                        <h3><%= a.title %></h3>
+                    <% end %>
+                <% else %>
+                    <%= link_to "#{a.id}" do %>
+                        <h3><%= a.title %></h3>
+                        <h4><%= a.subtitle %></h4>
+                    <% end %>
                 <% end %>
                 <p class="meta">by <%= link_to a.by, "/author?n=#{a.by.html_safe}" %></p>
             </div>
         <% end %>
+        <div class="low-feat-article">
+            <br><br>
+            <p class="center">+++</p>
+            <br>
+            <h3><%= link_to 'See the rest', "/toc/#{@current_issue.id}" %>
         </div>
-        <%= link_to "/toc/#{@current_issue.id}" do %>
-        <h2>
-        <% end %>
     </div>
-
+    <br>
+    <br>
 
     <h2>From the Archive</h2>
-
-    <% (the_rest + @feed_articles).each do |a| %>
-        <p><%= a.inspect() %></p>
+    <div class="feed">
+    <% (the_rest + @feed_articles)[0..9].each do |a| %>
+        <p><%= render 'article/row', article: a %></p>
     <% end %>
+    </div>
 </main>

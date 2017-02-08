@@ -5,18 +5,33 @@ header {
     width: 100%;
 }
 
-header h1 {
+.logo a:hover {
+	text-decoration: none;
+}
+
+header .logo {
 	text-align: center;
 	padding: 0;
+	font-size: 3em;
+	-webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+header .logo.desktop {
+	padding: 0.3em 0;
 }
 
 .overlay.full_page_nav {
 	display: block;
 	position: fixed;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	background-color: red;
 }
 
@@ -32,20 +47,20 @@ header h1 {
 	text-decoration: none;
 }
 
-#social img, #mobile-nav #social img {
-	width: 30px;
-	display: inline-block;
-	margin-right: 1em;
-}
-
-#top-links li, #top-links div, #top-links img, #top-links ul{
-	display: inline-block;
-	margin: 5px;
-}
-
 #top-links {
-	margin-left: 5em;
-	margin-right: 5em;
+	ul {
+		margin-top: 16px;
+	}
+}
+
+#social img, #mobile-nav #social img {
+	width: 27px;
+	margin-right: 22px;
+	margin-top: 14px;
+}
+
+#top-links li, #top-links div, #top-links img, #top-links ul {
+	float: left;
 }
 
 header input, #mobile-nav input {
@@ -63,20 +78,22 @@ header input, #mobile-nav input {
 }
 
 header form {
-	display: inline;
 	float: right;
-	margin: 5px;
+	margin-top: 10px;
 }
 
-ul, #mobile-nav ul {
+header ul, #mobile-nav ul {
     font-family: 'Avenir', sans-serif;
     font-weight: normal;
-    margin-top: 15px;
-    margin-bottom: 10px;
     font-size: 1.25em;
 }
 
-header input:focus {
+#mobile-nav ul {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+header input:focus, header input:hover {
 	-webkit-box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
@@ -88,7 +105,7 @@ header input:focus {
     outline: none;
 }
 
-#sections {
+#sections, #top-links ul {
 	text-align: center;
 	li {
 		display: inline-block;
@@ -102,7 +119,7 @@ header input:focus {
 	display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 	#top-links {
 		display: none;
 	}
