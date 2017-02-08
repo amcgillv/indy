@@ -1,12 +1,16 @@
 main#home {
 	max-width: 1024px;
+    a:hover h2 {
+        text-decoration: underline;
+    }
+}
+
+p.meta {
+    font-family: 'Avenir', sans-serif;
+    font-style: italic;
 }
 
 #top-feat, #low-feat {
-    p.meta {
-        font-family: 'Avenir', sans-serif;
-        font-style: italic;
-    }
     p.excerpt {
         text-align: left;
         margin: 0 1em;
@@ -73,6 +77,9 @@ main#home {
         display: inline-block;
         width: calc(33% - 60px);
     }
+    h3, h4 {
+        padding-bottom: 0;
+    }
 }
 
 #low-feat:before {
@@ -98,5 +105,3 @@ main#home {
 .feed {
     padding: 0 1em;
 }
-
-

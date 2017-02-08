@@ -4,43 +4,25 @@
 
 // row partial
 
+.article-row {
+    width: 100%;
+    h3 {
+        padding-bottom: 0.5em;
+    }
+    h4 {
+        padding: 0;
+    }
+    .thumb {
+        margin: 30px 15px 15px 15px;
+        float: left;
+        width: 150px;
+        height: 150px;
+        background-size: contain;
+        background-position: center;
+    }
+}
 // end row partial
 
-// box partial
-.box:nth-child(2n + 1) {
-    margin: 2em 2em 2em 1em;
-}
-
-.box:nth-child(2n) {
-    margin: 2em 1em 2em 2em;
-}
-
-.box.row {
-    width: 100%;
-    display: block;
-}
-
-.box {
-    text-align: center;
-    padding: 1em;
-    position: relative;
-    h1, h2, h3, h4, h5, h6 {
-        padding: 0 0 0.5em 0;
-    }
-    display: inline-flex;
-    flex-direction: column;
-    width: calc(48% - 4em);
-    height: 250px;
-}
-
-.box .thumb {
-    display: inline-block;
-    width: 60%;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-}
-// end box partial
 
 
 article {

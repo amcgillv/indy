@@ -23,7 +23,7 @@
 
     <%# byline! some stuff might not have one, so guard it. %>
     <% unless article.by.blank? %>
-        <p><%= link_people(article.by, "/author") %></p>
+        <p class="meta"><%= link_people(article.by, "/author") %></p>
     <% end %>
 
     <% # styling will depend on what kind of content this is
@@ -34,11 +34,10 @@
 
     <%# excerpt! some stuff might not have one, so guard it. %>
     <% unless article.body.blank? %>
-        <% excerpt_len = has_image ? 10 : 20 %>
-        <% excerpt = strip_tags(article.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..excerpt_len].join(' ') %>
+        <% excerpt = strip_tags(article.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..20].join(' ') %>
         <% unless excerpt.blank? # also need this cuz body could just have an image. %>
-            <p><% (excerpt + ' &hellip;').html_safe %></p>
+            <p><%= (excerpt + ' &hellip;').html_safe %></p>
         <% end %>
     <% end %>
-    
+    <div class="clearfix"></div>
 </div>

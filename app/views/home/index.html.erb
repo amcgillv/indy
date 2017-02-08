@@ -7,7 +7,7 @@
 <%  # show current issue title on the site
     display_title = @current_issue.title.gsub("The College Hill Independent", "")
                                         .gsub("The Indy", "")
-    display_date =  @current_issue.date.strftime('%b %d, %Y')
+    display_date =  @current_issue.date.strftime('%b %d %Y')
     # get the featured articles and the rest, if we're supposed to.
     # reject FTE, which should not be featured!
     fte = (@current_articles.select { |a| a.category == "FTE" })[0]
@@ -27,9 +27,9 @@
 %>
     <div id="current-issue">
         <%= link_to "/toc/#{@current_issue.id}" do %>
-        <h2 style="float:left;"><%= display_title %></h2>
+        <h2 style="float:left;">Current Issue</h2>
+        <h2 style="float:right;"><%= display_title %>, <%= display_date %></h2>
         <% end %>
-        <h2 style="float:right;"><%= display_date %></h2>
         <div class="clearfix"></div>
         <%# FTE box %>
         <div id="fte" class="caret">
