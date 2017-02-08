@@ -11,22 +11,14 @@
     # get the FTE
     articles = issue.articles
     fte = (articles.select { |a| a.category == "FTE" })[0]
-
-    # get the featured articles and the rest, if we're supposed to.
-    # reject FTE, which should not be featured!
-    if homepage
-        featured = articles.select { |a| a.featured }
-        the_rest = articles.reject { |a| a.featured or a.category == 'FTE' }
-    else
-        cats = Hash.new
-        articles.each do |a|
-            # skip the fte
-            unless a.category == 'FTE'
-                if cats.key?(a.category)
-                    cats[a.category].push(a)
-                else
-                    cats[a.category] = [a]
-                end
+    cats = Hash.new
+    articles.each do |a|
+        # skip the fte
+        unless a.category == 'FTE'
+            if cats.key?(a.category)
+                cats[a.category].push(a)
+            else
+                cats[a.category] = [a]
             end
         end
     end
@@ -40,7 +32,7 @@
     <h2 style="float:right;"><%= issue.date.strftime('%b %d, %Y') %></h2>
     <div class="clearfix"></div>
 
-    <% # FTE box %>
+    <%# FTE box %>
     <div id="fte" class="caret">
     <h3>From the Editors</h3>
     <%= fte.body.html_safe %>
@@ -48,16 +40,10 @@
     <div class="clearfix"></div>
     </div>
 
-    <% if homepage %>
-        <% (featured + the_rest).each do |a| %>
-            <%= render "article/box", article: a %>
-        <% end %>
-    <% else # toc page %>
-        <% cats.sort.each do |cat, cat_articles| %>
-            <h3><%= cat %></h3>
-            <% cat_articles.each do |a| %>
-                <%= render "article/box", article: a %>
-            <% end %>
+    <% cats.sort.each do |cat, cat_articles| %>
+        <h3><%= cat %></h3>
+        <% cat_articles.each do |a| %>
+            <%= render "article/row", article: a %>
         <% end %>
     <% end %>
 

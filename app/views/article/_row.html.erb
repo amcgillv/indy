@@ -1,38 +1,43 @@
-<% a = row_item_of_article_or_archive(article) %>
-<% row_class = a[:has_image] ? (a[:just_image] ? "just-image" : "image") : "no-image" %>
-<div class="article-row <%= row_class %>">
-		<% if !a[:just_image] && a[:has_image] %>
-			<%= link_to a[:hotlink] do %>
-				<div class="thumb <%= row_class %>" style="background-image: url(<%= a[:image_url] %>)"></div>
-			<% end %>
-		<% end %>
-		<div class="info">
-			<%= link_to a[:hotlink] do %>
-	   			<h2><%= a[:title] %></h2>
-	   		<% end %>
-	   		<% if !a[:subtitle].blank? %>
-	   			<h4><%= a[:subtitle] %></h4>
-	   		<% end -%>
-	   		<% if !a[:author].blank? %>
-	   			<p class="meta"><%= a[:author] %></p>
-	   		<% end %>
-	   		<% if !a[:just_image] && a[:has_image] %>
-				<%= link_to a[:hotlink] do %>
-					<div class="mobile-thumb <%= row_class %>" style="background-image: url(<%= a[:image_url] %>)"></div>
-				<% end %>
-			<% end %>
-	   		<% if a[:just_image] %>
-	   			<%= link_to a[:hotlink] do %>
-	   				<div class="row-image" style="background-image: url(<%= a[:image_url] %>)"></div>
-	   			<% end %>
-	   		<% elsif !a[:excerpt].blank? %>
-	   			<p><%= a[:excerpt] %></p>
-	   		<% end %>
-	   		<% meta = []
-	   		   meta.push (link_to a[:category], "/feed?s=" + ERB::Util.url_encode(a[:category])).html_safe if show_cat && !a[:category].blank?
-	   		   meta.push "posted <abbr class='timeago' title='#{a[:date]}'>#{a[:timeago]} ago</abbr>".html_safe
-	   		   meta.push (link_to "0 comments", a[:hotlink] + "#disqus_thread").html_safe
-	   		%>
-	   		<p class="meta"><%= raw meta.join(' &nbsp;&bull;&nbsp; ') %></p>
-	   	</div>
+<div class="article-row">
+
+    <%# thumbnail! some stuff might not have one, so guard it. %>
+    <% unless article.first_image_url.blank? %>
+        <%= link_to "#{article.id}" do %>
+            <div class="thumb" style="background-image: url(<%= article.first_image_url %>);"></div>
+        <% end %>
+    <% end %>
+
+    <% if article.subtitle.blank? %>
+        <%= link_to "#{article.id}" do %>
+            <%# title! everything should have a title. %>
+            <h3><%= article.title %></h3>
+        <% end %>
+    <% else %>
+        <%# subtitle! some stuff might not have one, so we guard it. %>
+        <%= link_to "#{article.id}" do %>
+            <%# title! everything should have a title. %>
+            <h3><%= article.title %></h3>
+            <h4><%= article.subtitle %></h4>
+        <% end %>
+    <% end %>
+
+    <%# byline! some stuff might not have one, so guard it. %>
+    <% unless article.by.blank? %>
+        <p><%= link_people(article.by, "/author") %></p>
+    <% end %>
+
+    <% # styling will depend on what kind of content this is
+       has_image = !article.first_image_url.blank?
+       no_text = removetags(strip_tags(article.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank?
+       image_class = (no_text ? (has_image ? 'just-image' : 'nothing')
+                              : (has_image ? 'image-and-text' : 'just-text')) %>
+
+    <%# excerpt! some stuff might not have one, so guard it. %>
+    <%# unless article.body.blank? %>
+        <%# excerpt_len = has_image ? 10 : 20 %>
+        <%# excerpt = strip_tags(article.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..excerpt_len].join(' ') %>
+        <%# unless excerpt.blank? # also need this cuz body could just have an image. %>
+            <!-- <p><%# (excerpt + ' &hellip;').html_safe %></p> -->
+        <%# end %>
+    <%# end %>
 </div>

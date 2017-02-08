@@ -10,6 +10,9 @@ class HomeController < ApplicationController
         @issues = Issue.where(:published => true).where("date IS NOT NULL").order("date DESC")
         @current_issue = @issues[0]
         @current_articles = @current_issue.articles
+
+        @feed_articles = Article.where("published_at < ?", @current_issue.date)
+
         # paginate
         issues_per_page = 20.0
         @pages = (@issues.length.to_f / issues_per_page).ceil

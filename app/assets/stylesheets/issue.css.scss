@@ -15,7 +15,9 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    background-color: #f2f2f2;
+    // background-color: #f2f2f2;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .car {

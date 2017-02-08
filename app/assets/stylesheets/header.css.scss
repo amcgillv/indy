@@ -1,6 +1,7 @@
 header {
     background-color: white;
     height: auto;
+    margin-bottom: 1em;
 }
 
 header h1 {
@@ -55,9 +56,9 @@ header form {
 ul, #mobile-nav ul {
     font-family: 'Avenir', sans-serif;
     font-weight: normal;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 1em;
+    font-size: 1.25em;
 }
 
 header input:focus {
@@ -72,13 +73,14 @@ header input:focus {
     outline: none;
 }
 
-li {
-	display: inline-block;
-	margin: 5px;
-}
-
 #sections {
 	text-align: center;
+	li {
+		display: inline-block;
+	}
+	li:not(:first-child) {
+		margin-left: 24px;
+	}
 }
 
 #hamburger {

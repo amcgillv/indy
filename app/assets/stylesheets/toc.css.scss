@@ -1,20 +1,11 @@
-#toc {
+#toc, #current-issue {
     padding: 0px 25px;
-
-    .box {
-        display: inline-block;
-        padding: 0 1em;
-        width: calc(49% - 2em);
-        // height: 200px;
-        // overflow: hidden;
-    }
 }
 
 #fte {
     position: relative;
     margin: 0 1em;
     padding:  20px 25px;
-
     h3 {
         padding: 0;
         padding-bottom: 0.5em;
