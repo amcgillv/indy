@@ -81,4 +81,9 @@ $(function() {
         // $("#ham").toggleClass("x");
         $(".overlay").toggleClass("full_page_nav");
     });
+
+    $(".equis").click(function(e) {
+        //closing the overlay
+        $(".overlay").toggleClass("full_page_nav");
+    });
 });
