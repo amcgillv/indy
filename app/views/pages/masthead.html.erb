@@ -1,0 +1,114 @@
+<%= render 'layouts/header' %>
+
+<% 
+# fun data entry for future web editors
+masthead = Hash.new
+masthead["Managing Editors"] = [
+    'Sophie Kasakove',
+    'Lisa Borst',
+    'Jamie Packs'
+]
+masthead["News"] = [
+    'Camila Ruiz Segovia',
+    'Shane Potts',
+    'Liz Cory'
+]
+masthead["Metro"] = [
+    'Jane Argodale',
+    'Will Weatherly',
+    'Marianna McMurdock']
+masthead["Arts"] = ['Will Tavlin',
+    'Ryan Rosenberg',
+    'Kelton Ellis'
+]
+masthead["Features"] = [
+    'Dominique Pariso',
+    'Elias Bresnick',
+    'Dash Elhauge',
+    'Piper French'
+]
+masthead["Science"] = [
+    'Fatima Husain'
+]
+masthead["Tech"] = [
+    'Jonah Max'
+]
+# masthead["Interviews"] = ['Elias Bresnick'] # RIP
+masthead["Occult"] = [
+    'Lance Gloss'
+]
+masthead["Literary"] = [
+    'Stefania Gomez',
+    'Marcus Mamourian'
+]
+masthead["Metabolics"] = [
+    'Sam Samore',
+    'Isabelle Doyle'
+]
+masthead["Ephemera"] = [
+    'Patrick McMenamin',
+    'Mark Benz'
+]
+masthead["X"] = [
+    'Liby Hays',
+    'Nicole Cochary'
+]
+masthead["List"] = [
+    'Malcom Drenttel',
+    'Ruby Stenhouse'
+]
+masthead["Cover"] = [
+    'Jade Donaldson'
+]
+masthead["Design & Illustration"] = [
+    'Nikolas Bentel',
+    'Celeste Matsui',
+    'Alexa Terfloth',
+    'Zak Ziebell'
+]
+masthead["Staff Writers"] = [
+    'Hannah Maier-Katkin',
+    'Corey Hebert',
+    'Kim Meilun',
+    'Jack Brook',
+    'Eve Zelickson',
+    'Dolma Ombadykow',
+    'Saanya Jain',
+    'Anna Hundert',
+    'Andrew Deck',
+    'Signe Swanson',
+    'Josh Kurtz',
+]
+masthead["Designers + Illustrators"] = [
+    'Maria Cano-Flavia',
+    'Teri Minogue',
+    'Gabriel Matesanz',
+    'Meryl Charleston',
+    'Daniel Chimes',
+    'My Tran',
+    'Andrew Linder',
+    'Stig Brunnstrom',
+    'Celeste Matsui',
+    'Ivan Rios-Fetchko',
+    'Frans Van Hoek',
+    'Yuko Okabe',
+]
+masthead["Copy"] = ['Miles Taylor']
+masthead["Senior Editor"] = ['Alec Mapes-Frances']
+masthead["Web"] = ['Charlie Windolf']
+%>
+
+<main class="static-page ting">
+    <h1>Masthead</h1>
+    <div id="masthead" class="pinterest-style-holder">
+    <% masthead.each do |section, people| %>
+        <div class="pinterest-style-thing">
+        <h4><%= section %></h4>
+        <% people.each do |them| %>
+            <p><%= them %></p>
+        <% end %>
+        </div>
+    <% end %>
+    </div>
+
+</main>

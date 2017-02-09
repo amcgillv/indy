@@ -1,54 +1,6 @@
 <%= render 'layouts/header' %>
 
-<% # fun data entry for future web editors
-masthead = Hash.new
-masthead["Managing Editors"] = ['Sophie Kasakove', 'Lisa Borst', 'Jamie Packs']
-masthead["News"] = ['Camila Ruiz Segovia', 'Shane Potts', 'Liz Cory']
-masthead["Metro"] = ['Jane Argodale', 'Will Weatherly', 'Marianna McMurdock']
-masthead["Arts"] = ['Will Tavlin', 'Ryan Rosenberg', 'Kelton Ellis']
-masthead["Features"] = ['Dominique Pariso', 'Elias Bresnick', 'Dash Elhauge', 'Piper French']
-masthead["Science"] = ['Fatima Husain']
-masthead["Tech"] = ['Jonah Max']
-# masthead["Interviews"] = ['Elias Bresnick'] # RIP
-masthead["Occult"] = ['Lance Gloss']
-masthead["Literary"] = ['Stefania Gomez', 'Marcus Mamourian']
-masthead["Metabolics"] = ['Sam Samore', 'Isabelle Doyle']
-masthead["Ephemera"] = ['Patrick McMenamin', 'Mark Benz']
-masthead["X"] = ['Liby Hays', 'Nicole Cochary']
-masthead["List"] = ['Malcom Drenttel', 'Ruby Stenhouse']
-masthead["Cover"] = ['Jade Donaldson']
-masthead["Design & Illustration"] = ['Nikolas Bentel', 'Celeste Matsui', 'Alexa Terfloth', 'Zak Ziebell']
-masthead["Staff Writers"] = [
-    'Hannah Maier-Katkin',
-    'Corey Hebert',
-    'Kim Meilun',
-    'Jack Brook',
-    'Eve Zelickson',
-    'Dolma Ombadykow',
-    'Saanya Jain',
-    'Anna Hundert',
-    'Andrew Deck',
-    'Signe Swanson',
-    'Josh Kurtz',
-]
-masthead["Designers + Illustrators"] = [
-    'Maria Cano-Flavia',
-    'Teri Minogue',
-    'Gabriel Matesanz',
-    'Meryl Charleston',
-    'Daniel Chimes',
-    'My Tran',
-    'Andrew Linder',
-    'Stig Brunnstrom',
-    'Celeste Matsui',
-    'Ivan Rios-Fetchko',
-    'Frans Van Hoek',
-    'Yuko Okabe',
-]
-masthead["Copy"] = ['Miles Taylor']
-masthead["Senior Editor"] = ['Alec Mapes-Frances']
-masthead["Web"] = ['Charlie Windolf']
-
+<%
 emails = Hash.new
 emails['News']       = 'theindynews@gmail.com'
 emails['Metro']      = 'theindymetro@gmail.com'
@@ -69,36 +21,33 @@ emails['Web']        = 'indyweb@gmail.com'
 %>
 
 <main class="static-page ting">
-    <h1>the college hill independent</h1>
-    <h1>volume 33 - fall 2016</h1>
-    <div id="masthead">
-    <% masthead.each do |section, people| %>
-        <h4><%= section.downcase %></h4>
-        <% people.each do |them| %>
-            <p><%= them %></p>
-        <% end %>
+    <h1>Vol. 33 <span style="font-weight: normal;">+++</span> Spring 2017</h1>
+    <br>
+    <h2>Mission Statement</h2>
+    <p>The College Hill Independent is a Providence-based publication written, illustrated, designed, and edited by students from Brown and RISD. Our paper is distributed around Providence’s East Side and Downtown, as well as online. In addition to publishing 20 pages of original writing, reporting, and art once a week, the Indy functions as an open workshop in which writers, artists, and designers collaborate and provide feedback on their work. Through an extensive editing process, we challenge each other to be responsible, intentional, and self-critical.</p>
+    <p>We are committed to publishing politically engaged and accessible work. While the Indy is financed by Brown University, we hold ourselves accountable to our readers across the Providence community. The Indy rejects content that explicitly or implicitly perpetuates racism, sexism, homophobia, transphobia, xenophobia, ableism and/or classism. </p>
+    <p>Though this list is not exhaustive, the Indy strives to address these systems of oppression by centering the voices, opinions, and efforts of marginalized people in Providence and beyond. </p>
+    <p>The Indy is constantly evolving: we are always working to make our staff and content more inclusive. Though our editing process provides an internal structure for accountability, we always welcome letters to the editor. </p>
+    <p>Spring 2017</p>
+
+    <h2>Editorial Policy</h2>
+    <p>All submissions become property of The Indy. An editorial or blog post that appears without a byline represents the views of The Indy. Any other column, letter or image is the work of the attributed author and does not necessarily represent the views or opinions of The Indy.</p>
+    
+
+    <h2>Contributing</h2>
+    <p>The Indy welcomes all contributions (of words, images and letters) from current Brown and RISD students. If you’re looking to join our editorial staff, you can download the editor application from our website at the end of each semester. We also host an information session / new writers meeting every September and February; all are encouraged to attend.</p>
+    <p>Please send submissions to <strong><a href="mailto:theindy@gmail.com" target="_top">theindy@gmail.com</a></strong>. You may also send pitches, submissions, or requests to join the contributors’ mailing list to individual sections at the addresses below.</p>
+    <div class="pinterest-style-holder">
+    <% emails.each do |s, p| %>
+    <div class="pinterest-style-thing emails">
+        <h5><%= s %></h5><p><a href="mailto:<%= p %>" target="_top"><%= p %></a></p>
+    </div>
     <% end %>
     </div>
-    <br><br>
-    <h1>about us</h1>
-    <p>The College Hill Independent is an alternative weekly newspaper written, designed, and illustrated by Brown and RISD students for the Providence community. It has been in existence since 1990.</p>
-    <p>We publish ten issues per semester on a weekly basis. New issues come out Friday mornings and are distributed around Providence. 2,000 copies/issue means 40,000 copies/year, which makes the Indy the largest weekly newspaper in the state of Rhode Island. The Indy is printed in Seekonk, MA by TCI Press.</p>
-    <p><strong>Letters to the editor</strong> are always welcome at <a href="mailto:theindy@gmail.com" target="_top">theindy@gmail.com</a>.</p>
-    <p>We're big on the Internet. Follow us on Twitter <strong><a href="https://twitter.com/theindy_tweets" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','twitter.com']);">@theindy_tweets</a></strong> and like us on <strong><a href="http://www.facebook.com/pages/The-Indy/152814864875420" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.facebook.com']);">Facebook</a></strong>.</p>
-    <h4 style="margin-bottom:0;">Editorial Policy:</h4>
-    <p>All submissions become property of The Indy. An editorial or blog post that appears without a byline represents the views of The Indy. Any other column, letter or image is the work of the attributed author and does not necessarily represent the views or opinions of The Indy.</p>
-    <h1>how to contribute</h1>
-    <p>The Indy welcomes all contributions (of words, images and letters) from current Brown and RISD students. If you’re looking to join our editorial staff, you can download the editor application from our website at the end of each semester. We also host an information session / new writers meeting every September and February; all are encouraged to attend.</p>
-    <h4 style="margin-bottom:0;">To contribute:</h4>
-    <p>Please send submissions to <a href="mailto:theindy@gmail.com" target="_top">theindy@gmail.com</a>. You may also send pitches, submissions, or requests to join the contributors’ mailing list to individual sections:</p>
-    <% emails.each do |s, p| %>
-        <p><strong><%= s %>:</strong>&nbsp;<a href="mailto:<%= p %>" target="_top"><%= p %></a></p>
-    <% end %>
-    <h4 style="margin-bottom:0;">Send mail to:</h4>
-    <pre>The College Hill Independent
+    <h2>Snail Mail</h2>
+    <pre style="width: 300px; margin: 0 auto;">The College Hill Independent
 PO Box 1930
 Brown University
 Providence RI 02912</pre>
-    <h2><strong><span style="color: #333333;">Staff Writers and Illustrators</span></strong></h2>
-    <p>Writers and illustrators who publish three or more pieces in a semester are added to the masthead as Staff Writers and Staff Illustrators. Please contact theindy@gmail.com with questions.</p>
+    <br><br>
 </main>
