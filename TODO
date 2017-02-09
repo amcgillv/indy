@@ -1,13 +1,22 @@
-[          ] update to ruby 2.2.3 - this one is gonna be terrible
 [ in prog  ] add X
                 [x] add X field to admin form
                 [ ] go through and populate the DB. (things are tagged with X!)
 [ seems ok ] new fonts
-[          ] let the spiders back in
 [          ] floaty header
 [          ] update masthead
 [          ] mobile logo
 [          ] smaller carousel
-[          ] caps center headers
-[          ] hide fte on mobile
-[          ] migrate db
+[          ] line wrap in article/row
+
+
+just before release:
+[          ] let the spiders back in / turn off debug
+
+
+maybe:
+[          ] issue feed page
+
+
+later:
+[          ] better 404
+[          ] update to ruby 2.2.3 - this one is gonna be terrible

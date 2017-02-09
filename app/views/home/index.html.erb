@@ -100,7 +100,7 @@
             <div class="clearfix"></div>
         </div>
 
-        <h3 class="center"><%= link_to 'See More'.html_safe, "/toc/#{@current_issue.id}" %></h3>
+        <h3 class="center"><%= link_to 'Read More'.html_safe, "/toc/#{@current_issue.id}" %></h3>
     </div>
     <div id="current-issue-mobile">
         <%= link_to "/toc/#{@current_issue.id}" do %>
@@ -108,32 +108,25 @@
         <h2 class="center"><%= display_title %>, <%= display_date %></h2>
         <% end %>
 
-        <div id="fte" class="caret">
-            <h3>From the Editors</h3>
-            <%= fte.body.html_safe %>
-            <span>&ndash; <%= fte.by.upcase %></span>
-            <div class="clearfix"></div>
-        </div>
-
         <% (nice_featured_articles + bad_featured_articles).each do |a| %>
             <%= render 'article/row', article: a %>
         <% end %>
         <br>
         <p class="center">+++</p>
-        <h3 class="center"><%= link_to 'See More'.html_safe, "/toc/#{@current_issue.id}" %>
+        <h3 class="center"><%= link_to 'Read More'.html_safe, "/toc/#{@current_issue.id}" %>
     </div>
 
     <br>
     <hr>
     <br>
 
-    <h2 class="center">From the Archive</h2>
+    <h2 class="center upcase">From the Archive</h2>
     <div class="feed">
     <% (the_rest + @feed_articles)[0..4].each do |a| %>
         <%= render 'article/row', article: a %>
     <% end %>
     </div>
     <%= link_to "/feed" do %>
-        <h2 class="center">More</h2>
+        <h2 class="center">More Articles</h2>
     <% end %>
 </main>
