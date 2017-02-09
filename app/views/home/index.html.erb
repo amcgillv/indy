@@ -12,7 +12,7 @@
     # reject FTE, which should not be featured!
     fte = (@current_articles.select { |a| a.category == "FTE" })[0]
     articles_by_niceness = (@current_articles.reject { |a| a.category == 'FTE' })
-                                            .sort_by{ |a|
+                                             .sort_by{ |a|
                                 -5 * a.featured.to_i +
                                 -(!a.first_image_url.blank?).to_i +
                                 -(!removetags(strip_tags(a.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank?).to_i +

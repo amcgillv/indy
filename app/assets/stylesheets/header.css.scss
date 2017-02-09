@@ -42,6 +42,10 @@ h2.logo.mobile {
 	float: left;
 }
 
+body.noscroll {
+	overflow: hidden;
+}
+
 .overlay.full_page_nav {
 	display: block;
 	position: fixed;
@@ -58,6 +62,7 @@ h2.logo.mobile {
 }
 
 .overlay-content form {
+	position: static;
 	float: left;
 	display: block;
 	margin-left: 10px
@@ -178,8 +183,14 @@ header input:focus, header input:hover {
 		display: none;
 	}
 
+	#mobile-phantom-header {
+		height: 60px;
+	}
+
 	header {
-		height: 85px;
+		position: fixed;
+		top: 0;
+		height: 60px;
 		display: block;
 		vertical-align: text-bottom;
 	}
@@ -246,17 +257,12 @@ header input:focus, header input:hover {
 	}
 	// mobile menu
 	#ham {
-		display: inline-block;
-		position: absolute;
-		right: 1em;
-		top: calc(0.5em + 17px) !important;
+		float: right;
 		background-image: image-url('hamburger-150.png');
 		background-size: contain;
 		width: 20px;
 		height: 20px;
 		cursor: pointer;
-		margin-bottom: 10px;
-		margin-right: 20px;
 		vertical-align: top;
 	}
 

@@ -67,18 +67,6 @@
 	    -o-transition: margin-top linear 0.2s;
 	    transition: margin-top linear 0.2s;
 	}
-	// mobile menu
-	#ham {
-		display: block;
-		position: absolute;
-		right: 1em;
-		top: calc(0.5em + 28px);
-		background-image: image-url('hamburger-150.png');
-		background-size: contain;
-		width: 30px;
-		height: 30px;
-		cursor: pointer;
-	}
 
 	#ham.x {
 		background-image: image-url('equis-150.png');

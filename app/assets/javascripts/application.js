@@ -77,13 +77,13 @@ $(function() {
     // hamburger button
     $(".ting, nav, #mobile-nav").addClass("ham-inactive");
     $("#ham").click(function(e) {
-        // $("body, .ting, nav, #mobile-nav").toggleClass("ham-active").toggleClass("ham-inactive");
-        // $("#ham").toggleClass("x");
+        $('body').toggleClass('noscroll');
         $(".overlay").toggleClass("full_page_nav");
     });
 
     $(".equis").click(function(e) {
         //closing the overlay
         $(".overlay").toggleClass("full_page_nav");
+        $('body').toggleClass('noscroll');
     });
 });
