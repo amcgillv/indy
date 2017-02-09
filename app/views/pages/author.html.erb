@@ -2,12 +2,12 @@
 
 <main class="ting">
     <% if !params[:n].nil? %>
-        <h1>Articles by <%= raw(params[:n]) %></h1>
+        <h1 class="center">Articles by <%= raw(params[:n]) %></h1>
     <% end %>
 
     <div class="row">
         <% if @articles %>
-            <h3><%= pluralize(@articles.length, 'article') %> found.</h3>
+            <h3 class="center"><%= pluralize(@articles.length, 'article') %> found.</h3>
             <br>
             <% @articles.each do |article| %>
                 <%= render 'article/row', article: article, show_cat: true %>
