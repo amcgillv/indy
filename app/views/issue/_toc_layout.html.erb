@@ -32,6 +32,9 @@
     <h2 style="float:right;"><%= issue.date.strftime('%b %d, %Y') %></h2>
     <div class="clearfix"></div>
 
+    <%# slice of the cover %>
+    <div id="cover-slice" style="background-image: url(<%= issue.cover %>)"></div>
+
     <%# FTE box %>
     <% unless fte.nil? %>
         <div id="fte" class="caret">
@@ -42,11 +45,16 @@
         </div>
     <% end %>
 
+    <% i = 0 %>
     <% cats.sort.each do |cat, cat_articles| %>
+        <% if i > 0 %>
+            <br><hr>
+        <% end %>
         <h3 class="center"><%= cat %></h3>
         <% cat_articles.each do |a| %>
             <%= render "article/row", article: a %>
         <% end %>
+        <% i = i + 1 %>
     <% end %>
 
 

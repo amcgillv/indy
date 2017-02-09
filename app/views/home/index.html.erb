@@ -15,15 +15,13 @@
                                              .sort_by{ |a|
                                 -5 * a.featured.to_i +
                                 -(!a.first_image_url.blank?).to_i +
-                                -(!removetags(strip_tags(a.body)).gsub(/\s/, '').gsub(/&nbsp;/, '').blank?).to_i +
                                 -(!a.subtitle.blank?).to_i
                             }
-
     # which articles are going in the two big boxes up top? we want
     # ones with images, subtitles, and excerpts that are featured.
     nice_featured_articles = articles_by_niceness[0..1]
-    bad_featured_articles = articles_by_niceness[2..3]
-    the_rest = articles_by_niceness[4..-1]
+    bad_featured_articles = articles_by_niceness[2..4]
+    the_rest = articles_by_niceness[5..-1]
 %>
     <div id="current-issue">
         <%= link_to "/toc/#{@current_issue.id}" do %>
@@ -31,13 +29,6 @@
         <h2 style="float:right;"><%= display_title %>, <%= display_date %></h2>
         <% end %>
         <div class="clearfix"></div>
-        <%# FTE box %>
-        <div id="fte" class="caret">
-            <h3>From the Editors</h3>
-            <%= fte.body.html_safe %>
-            <span>&ndash; <%= fte.by.upcase %></span>
-            <div class="clearfix"></div>
-        </div>
 
         <div id="top-feat">
             <% nice_featured_articles.each do |a| %>
@@ -75,6 +66,13 @@
         <div id="low-feat">
             <% bad_featured_articles.each do |a| %>
                 <div class="low-feat-article">
+                    <%  if a.first_image_url.blank? 
+                            bg = ""
+                        else
+                            bg = "style=\"background-image: url(#{a.first_image_url});\""
+                        end
+                    %>
+                    <div class="img-holder" <%= bg.html_safe %>></div>
                     <p class="meta"><%= link_to a.category, "/feed?s=#{a.category.html_safe}" %></p>
                     <% if a.subtitle.blank? %>
                         <%= link_to "/#{a.id}" do %>
@@ -91,13 +89,18 @@
                     <% end %>
                 </div>
             <% end %>
-            <div class="low-feat-article">
-                <br>
-                <p class="center">+++</p>
-                <h3 class="center"><%= link_to 'See More'.html_safe, "/toc/#{@current_issue.id}" %></h3>
-            </div>
             <div class="clearfix"></div>
         </div>
+
+        <%# FTE box %>
+        <div id="fte" class="caret">
+            <h3>From the Editors</h3>
+            <%= fte.body.html_safe %>
+            <span>&ndash; <%= fte.by.upcase %></span>
+            <div class="clearfix"></div>
+        </div>
+
+        <h3 class="center"><%= link_to 'See More'.html_safe, "/toc/#{@current_issue.id}" %></h3>
     </div>
     <div id="current-issue-mobile">
         <%= link_to "/toc/#{@current_issue.id}" do %>
@@ -121,6 +124,7 @@
     </div>
 
     <br>
+    <hr>
     <br>
 
     <h2 class="center">From the Archive</h2>

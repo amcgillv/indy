@@ -21,6 +21,13 @@
     }
 }
 
+#cover-slice {
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
 .car {
     position: relative;
     display: inline-block;
