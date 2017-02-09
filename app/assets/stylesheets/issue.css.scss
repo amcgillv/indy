@@ -11,19 +11,21 @@
 }
 
 #carousel {
-    height: 450px;
+    height: 385px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    // background-color: #f2f2f2;
     border-bottom: 1px solid black;
+    p {
+        font-family: 'Avenir', sans-serif;
+    }
 }
 
 .car {
     position: relative;
     display: inline-block;
-    width: 250px;
-    height: 360px;
+    width: 215px;
+    height: 310px;
     background-position: center;
     background-size: contain;
     margin: 25px;

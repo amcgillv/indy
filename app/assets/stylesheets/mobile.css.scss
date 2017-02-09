@@ -8,20 +8,8 @@
 		display: none;
 	}
 
-	main, article {
-
-	}
-
 	.issue-row {
 		margin: 1em;
-	}
-
-	h1.it {
-		font-size: 2em;
-	}
-
-	h3.it {
-		margin-top: 1.5em;
 	}
 
 	nav #issue-breadcrumb {
@@ -35,31 +23,6 @@
 	nav #logo-with-issue {
 		width: 100px;
 		height: 100px;
-	}
-
-	.it {
-		margin-left: 0.25em;
-		margin-right: 0.25em;
-	}
-
-	.mobile-thumb {
-		display: block;
-		width: 100%;
-		height: 100px;
-		background-position: center;
-		background-size: cover;
-	}
-
-	.thumb {
-		display: none;
-	}
-
-	.article-row {
-		margin-left: 1em;
-	}
-
-	.article-row.image {
-		padding-left: 0;
 	}
 
 	nav {

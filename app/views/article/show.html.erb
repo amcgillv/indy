@@ -1,6 +1,7 @@
 <%= render 'layouts/header' %>
 
 <article class="ting">
+    <br>
     <% if @article.has_hero? %>
         <div class="article-cover" >
             <div class="article-cover-image" style="background-image: url(<%= @article.hero(:xlarge) %>)"></div>
@@ -13,7 +14,7 @@
         </div>
     <div class="article-content article-content-first">
         <div class="mobile-article-title article-title">
-            <h1 class="uppercase"><%= @article.title %></h1>
+            <h2 class="uppercase"><%= @article.title %></h2>
             <h3><%= @article.subtitle %></h3>
             <h4><%= link_people(@article.by, "/author") %></h4>
             <% if !@article.illustrator.blank? %>
@@ -26,12 +27,12 @@
                 <h1 class="uppercase"><%= @article.title %></h1>
                 <h3><%= @article.subtitle %></h3>
                 <% if !@article.by.blank? %>
-                    <h4><%= link_people(@article.by, "/author") %></h4>
+                    <p class="meta"><%= link_people(@article.by, "/author") %></p>
                 <% end %>
                 <% if !@article.illustrator.blank? %>
-                    <h4 class="illustrator">Illustration <%= link_people(@article.illustrator, "/illustrator") %></h4>
+                    <p class="meta illustrator">Illustration <%= link_people(@article.illustrator, "/illustrator") %></p>
                 <% end %>
-                <h4><%= @article.published_at.strftime("published %B %-d, %Y") %></h4>
+                <p class="meta"><%= @article.published_at.strftime("published %B %-d, %Y") %></p>
             </div>
         </div>
     <div class="article-content">

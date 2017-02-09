@@ -2,15 +2,16 @@
 <%= render 'layouts/header' %>
 
 <article class="ting">
+    <br>
     <div class="article-content">
         <div class="article-title">
             <h1 class="uppercase"><%= @article.title %></h1>
             <h3><%= @article.subtitle %></h3>
             <% if !@article.author.blank? %>
-                <h4>by <%= link_people(@article.author, "/author") %></h4>
+                <p class="meta">by <%= link_people(@article.author, "/author") %></p>
             <% end %>
             <% if !@article.illustrator.blank? %>
-                <h4 class="illustrator">Illustration by <%= link_people(@article.illustrator, "/illustrator") %></h4>
+                <p class="meta illustrator">illustration by <%= link_people(@article.illustrator, "/illustrator") %></p>
             <% end %>
         </div>
     </div>

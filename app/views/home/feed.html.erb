@@ -1,7 +1,7 @@
 <%= render 'layouts/header' %>
 
 <main class="feed ting">
-	<h1 class="it"><%= params[:s].nil? ? "Everything" : params[:s] %></h1>
+	<h1 class="center"><%= params[:s].nil? ? "The Archive" : params[:s] %></h1>
 	<% if !params[:s].nil? && params[:s] == 'Literary' %>
 		<style>
 		div.article-row {
@@ -16,19 +16,22 @@
 	<%= render 'article/row', article: a, show_cat: params[:s].nil? %>
 	<% end %>
 
-	<div class="pagination">
+	<div class="pagination center">
 		<% if  params[:page].to_i == 2 %>
-		<%= link_to "previous page", feed_path(:s => params[:s]) %>
+		<h4><%= link_to "Newer", feed_path(:s => params[:s]) %></h4>
 		<% elsif !params[:page].nil? %>
-		<%= link_to "previous page", feed_path(:s => params[:s], :page => params[:page].to_i - 1) %>
+		<h4><%= link_to "Newer", feed_path(:s => params[:s], :page => params[:page].to_i - 1) %></h4>
 		<% end -%>
 
-		<%= " &nbsp;&bull;&nbsp; ".html_safe if !params[:page].nil? && params[:page].to_i < @pages -%>
+		<% if !params[:page].nil? and params[:page].to_i < @pages %>
+			<p class="noselect">+++</p>
+		<% end %>
 
 		<% if params[:page].nil? && params[:page].to_i < @pages %>
-		<%= link_to "next page", feed_path(:s => params[:s], :page => 2)%>
+		<h4><%= link_to "Older", feed_path(:s => params[:s], :page => 2)%></h4>
 		<% elsif params[:page].to_i < @pages %>
-		<%= link_to "next page", feed_path(:s => params[:s], :page => params[:page].to_i + 1)%>
+		<h4><%= link_to "Older", feed_path(:s => params[:s], :page => params[:page].to_i + 1)%></h4>
 		<% end -%>
 	</div>
+	<br>
 </main>

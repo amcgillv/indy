@@ -40,7 +40,9 @@ class HomeController < ApplicationController
 	def feed
 		@nav_issue = nil
 		if params[:s].nil? # grab all articles
-			@article_articles = Article.where(:published => true).order("published_at DESC")
+			@article_articles = Article.where(:published => true)
+                                       .where("category != ?", "FTE")
+                                       .order("published_at DESC")
         	@archive_articles = Archive.where(:status => 'publish').order("wp_post_date DESC")
         else # grab section's articles
             @article_articles = Article.where(:published => true).order("published_at DESC")

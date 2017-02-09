@@ -9,15 +9,19 @@ p.meta {
     font-style: italic;
 }
 
+#current-issue-mobile {
+    display: none;
+}
+
 #top-feat, #low-feat {
     p.excerpt {
         text-align: left;
         margin: 0 1em;
     }
-    h3 {
+    h4 {
         padding: 0 0 0.5em 0;
     }
-    h4 {
+    h5 {
         padding: 0;
     }
 }
@@ -30,13 +34,13 @@ p.meta {
         vertical-align: top;
         height: 100%;
         display: inline-block;
-        width: calc(49% - 4em);
+        width: calc(49% - 2em);
         margin: 0;
-        padding: 2em;
+        padding: 1em;
         .img-holder {
             position: relative;
             width: 100%;
-            height: 175px;
+            height: 140px;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -67,16 +71,15 @@ p.meta {
 
 #low-feat {
     position: relative;
-    text-align: center;
     .low-feat-article {
         vertical-align: top;
-        text-align: left;
-        padding: 15px 30px 0 30px;
+        text-align: center;
         height: 100%;
-        display: inline-block;
-        width: calc(33% - 60px);
+        float: left;
+        width: calc(33.33% - 60px);
+        padding: 15px 30px;
     }
-    h3, h4 {
+    h4, h5 {
         padding-bottom: 0;
     }
 }
@@ -89,6 +92,7 @@ p.meta {
     top: 15px;
     height: calc(100% - 30px);
     background-color: black;
+    z-index: 100;
 }
 
 #low-feat:after {
@@ -101,6 +105,30 @@ p.meta {
     background-color: black;
 }
 
+.no-pad-bottom {
+    padding-bottom: 0;
+}
+
 .feed {
     padding: 0 1em;
+    .pagination {
+        h4, p {
+            display: inline-block;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 0 1em;
+            cursor: default;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #current-issue {
+        display: none;
+    }
+
+    #current-issue-mobile {
+        display: block;
+    }
 }

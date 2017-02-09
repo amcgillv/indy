@@ -33,15 +33,17 @@
     <div class="clearfix"></div>
 
     <%# FTE box %>
-    <div id="fte" class="caret">
-    <h3>From the Editors</h3>
-    <%= fte.body.html_safe %>
-    <span>&ndash; <%= fte.by.upcase %></span>
-    <div class="clearfix"></div>
-    </div>
+    <% unless fte.nil? %>
+        <div id="fte" class="caret">
+        <h3>From the Editors</h3>
+        <%= fte.body.html_safe %>
+        <span>&ndash; <%= fte.by.upcase %></span>
+        <div class="clearfix"></div>
+        </div>
+    <% end %>
 
     <% cats.sort.each do |cat, cat_articles| %>
-        <h3><%= cat %></h3>
+        <h3 class="center"><%= cat %></h3>
         <% cat_articles.each do |a| %>
             <%= render "article/row", article: a %>
         <% end %>

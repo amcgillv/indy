@@ -21,7 +21,10 @@ header:after {
 header .logo {
 	text-align: center;
 	padding: 0;
-	font-size: 3em;
+	font-size: 2.35em;
+}
+
+.noselect {
 	-webkit-touch-callout: none;
       -webkit-user-select: none;
        -khtml-user-select: none;
@@ -58,14 +61,14 @@ header .logo.desktop {
 
 #top-links {
 	ul {
-		margin-top: 16px;
+		margin-top: 14px;
 	}
 }
 
 #social img, #mobile-nav #social img {
 	width: 27px;
-	margin-right: 22px;
-	margin-top: 14px;
+	margin-right: 13.95px;
+	margin-top: 10px;
 }
 
 #top-links li, #top-links div, #top-links img, #top-links ul {
@@ -73,11 +76,12 @@ header .logo.desktop {
 }
 
 header input, #mobile-nav input {
-	width: 148px;
+	width: 128px;
 	border: 2px solid black;
 	border-radius: 5px;
 	padding: 0.25em;
 	padding-right: 1.8em;
+	font-size: 85%;
 	font-family: 'Avenir', sans-serif;
     font-weight: lighter;
 	background-image: image-url('search.png');
@@ -88,13 +92,12 @@ header input, #mobile-nav input {
 
 header form {
 	float: right;
-	margin-top: 10px;
+	margin-top: 9px;
 }
 
 header ul, #mobile-nav ul {
     font-family: 'Avenir', sans-serif;
     font-weight: normal;
-    font-size: 1.25em;
 }
 
 #mobile-nav ul {
@@ -120,7 +123,7 @@ header input:focus, header input:hover {
 		display: inline-block;
 	}
 	li:not(:first-child) {
-		margin-left: 24px;
+		margin-left: 13.95px;
 	}
 }
 

@@ -40,70 +40,96 @@
         </div>
 
         <div id="top-feat">
-        <% nice_featured_articles.each do |a| %>
-            <div class="top-feat-article">
-                <br>
-                <%  if a.first_image_url.blank? 
-                        bg = ""
-                    else
-                        bg = "style=\"background-image: url(#{a.first_image_url});\""
-                    end
-                %>
-                <div class="img-holder" <%= bg.html_safe %>>
+            <% nice_featured_articles.each do |a| %>
+                <div class="top-feat-article">
+                    <br>
+                    <%  if a.first_image_url.blank? 
+                            bg = ""
+                        else
+                            bg = "style=\"background-image: url(#{a.first_image_url});\""
+                        end
+                    %>
+                    <div class="img-holder" <%= bg.html_safe %>></div>
+                    <p class="meta"><%= link_to a.category, "/feed?s=#{a.category.html_safe}" %></p>
+                    <% if a.subtitle.blank? %>
+                        <%= link_to "/#{a.id}" do %>
+                            <%# title! everything should have a title. %>
+                            <h4><%= a.title %></h4>
+                        <% end %>
+                    <% else %>
+                        <%# subtitle! some stuff might not have one, so we guard it. %>
+                        <%= link_to "/#{a.id}" do %>
+                            <%# title! everything should have a title. %>
+                            <h4><%= a.title %></h4>
+                            <h5><%= a.subtitle %></h5>
+                        <% end %>
+                    <% end %>
+                    <% unless a.by.blank? %>
+                        <p class="meta"><%= link_people(a.by, "/author") %></p>
+                    <% end %>
                 </div>
-                <p class="meta"><%= a.category %></p>
-                <% if a.subtitle.blank? %>
-                    <%= link_to "#{a.id}" do %>
-                        <%# title! everything should have a title. %>
-                        <h3><%= a.title %></h3>
-                    <% end %>
-                <% else %>
-                    <%# subtitle! some stuff might not have one, so we guard it. %>
-                    <%= link_to "#{a.id}" do %>
-                        <%# title! everything should have a title. %>
-                        <h3><%= a.title %></h3>
-                        <h4><%= a.subtitle %></h4>
-                    <% end %>
-                <% end %>
-                <p class="meta">by <%= link_to a.by, "/author?n=#{a.by.html_safe}" %></p>
-                <% excerpt = strip_tags(a.body).gsub("&nbsp;", "").strip.split(/\s+/)[0..20].join(' ') %>
-                <p class="excerpt"><%= excerpt %> &hellip;</p>
-            </div>
-        <% end %>
-        <div class="clearfix"></div>
+            <% end %>
+            <div class="clearfix"></div>
         </div>
 
         <div id="low-feat">
-        <% bad_featured_articles.each do |a| %>
+            <% bad_featured_articles.each do |a| %>
+                <div class="low-feat-article">
+                    <p class="meta"><%= link_to a.category, "/feed?s=#{a.category.html_safe}" %></p>
+                    <% if a.subtitle.blank? %>
+                        <%= link_to "/#{a.id}" do %>
+                            <h4><%= a.title %></h4>
+                        <% end %>
+                    <% else %>
+                        <%= link_to "/#{a.id}" do %>
+                            <h4><%= a.title %></h4>
+                            <h5><%= a.subtitle %></h5>
+                        <% end %>
+                    <% end %>
+                    <% unless a.by.blank? %>
+                        <p class="meta"><%= link_people(a.by, "/author") %></p>
+                    <% end %>
+                </div>
+            <% end %>
             <div class="low-feat-article">
-                <p class="meta"><%= link_to a.category, "/feed?s=#{a.category.html_safe}" %></p>
-                <% if a.subtitle.blank? %>
-                    <%= link_to "#{a.id}" do %>
-                        <h3><%= a.title %></h3>
-                    <% end %>
-                <% else %>
-                    <%= link_to "#{a.id}" do %>
-                        <h3><%= a.title %></h3>
-                        <h4><%= a.subtitle %></h4>
-                    <% end %>
-                <% end %>
-                <p class="meta">by <%= link_to a.by, "/author?n=#{a.by.html_safe}" %></p>
+                <br>
+                <p class="center">+++</p>
+                <h3 class="center"><%= link_to 'See More'.html_safe, "/toc/#{@current_issue.id}" %></h3>
             </div>
-        <% end %>
-        <div class="low-feat-article">
-            <br><br>
-            <p class="center">+++</p>
-            <br>
-            <h3><%= link_to 'See the rest', "/toc/#{@current_issue.id}" %>
+            <div class="clearfix"></div>
         </div>
     </div>
+    <div id="current-issue-mobile">
+        <%= link_to "/toc/#{@current_issue.id}" do %>
+        <h2 class="center no-pad-bottom">Current Issue</h2>
+        <h2 class="center"><%= display_title %>, <%= display_date %></h2>
+        <% end %>
+
+        <div id="fte" class="caret">
+            <h3>From the Editors</h3>
+            <%= fte.body.html_safe %>
+            <span>&ndash; <%= fte.by.upcase %></span>
+            <div class="clearfix"></div>
+        </div>
+
+        <% (nice_featured_articles + bad_featured_articles).each do |a| %>
+            <%= render 'article/row', article: a %>
+        <% end %>
+        <br>
+        <p class="center">+++</p>
+        <h3 class="center"><%= link_to 'See More'.html_safe, "/toc/#{@current_issue.id}" %>
+    </div>
+
     <br>
     <br>
 
-    <h2>From the Archive</h2>
+    <h2 class="center">From the Archive</h2>
     <div class="feed">
-    <% (the_rest + @feed_articles)[0..9].each do |a| %>
-        <p><%= render 'article/row', article: a %></p>
+    <% (the_rest + @feed_articles)[0..4].each do |a| %>
+        <%= render 'article/row', article: a %>
     <% end %>
     </div>
+    <%= link_to "/feed" do %>
+        <h2 class="center">More</h2>
+    <% end %>
 </main>

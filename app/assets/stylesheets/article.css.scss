@@ -7,13 +7,14 @@
 .article-row {
     width: 100%;
     h3 {
-        padding-bottom: 0.5em;
+        padding-bottom: 0;
     }
     h4 {
         padding: 0;
+        padding-top: 0.25em;
     }
     .thumb {
-        margin: 30px 15px 15px 15px;
+        margin: 30px 15px 15px 0px;
         float: left;
         width: 150px;
         height: 150px;
@@ -23,19 +24,24 @@
 }
 // end row partial
 
-
-
 article {
     padding-bottom: 50px;
+    h1 {
+        padding-bottom: 0.5em;
+    }
+    h3 {
+        padding: 0.5em 0;
+        font-style: italic;
+    }
     p {
         margin: 1em 0.5em;
     }
 }
 
-
 .mobile-article-title {
     display:none;
 }
+
 .article-cover {
     width: 100%;
     height: 600px;
@@ -79,37 +85,10 @@ article {
 .article-content {
     background-color: white;
     z-index: 1;
-    h2 {
-        font-family: 'Avenir', sans-serif;
-        text-transform: uppercase;
-        font-size: 1.3em;
-        font-weight: bold;
-    }
     .article-title {
         max-width: 100%;
         margin: 0px auto;
         text-align: center;
-        h1 {
-            font-size: 4em;
-            font-weight: bold;
-            margin: 0;
-            margin-top: 0.1em;
-            line-height: 1.2;
-        }
-        h3, h4 {
-            font-weight: normal;
-            font-style: italic;
-        }
-        h3 {
-            font-size: 2.3em;
-            margin: -12px 0 -11px 0;
-        }
-        h4 {
-            font-size: 1.3em;
-        }
-        .illustrator {
-             margin-top: -20px;
-        }
     }
 
 }
@@ -157,24 +136,26 @@ article iframe {
     border: none;
 }
 
-
-
 @media only screen and (max-width: 768px) {
+    article h3 {
+        padding: 0;
+    }
+    .article-row {
+        margin: 1em;
+        h3 {
+            padding-top: 0;
+        }
+        .thumb {
+            float: none;
+            width: calc(100% - 2em);
+        }
+    }
+
     .article-cover {
         background-size: 100%;
         height: 375px;
     }
-    .article-content {
-        .article-title {
-            h1 {
-                font-size: 3em;
-                margin-bottom: 0.5em;
-            }
-            h3 {
-                font-size: 2em;
-            }
-        }
-    }
+
     .nav {
         display: none;
     }
