@@ -56,3 +56,9 @@
         text-decoration: underline;
     }
 }
+
+@media (max-width: 768px) {
+    #carousel {
+        height: 360px;
+    }
+}

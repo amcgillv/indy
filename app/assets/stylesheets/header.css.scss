@@ -170,10 +170,6 @@ header input:focus, header input:hover {
 	}
 }
 
-#hamburger {
-	display: none;
-}
-
 @media (max-width: 768px) {
 	#top-links {
 		display: none;
@@ -184,29 +180,36 @@ header input:focus, header input:hover {
 	}
 
 	#mobile-phantom-header {
-		height: 60px;
+		height: 50px;
 	}
 
 	header {
 		position: fixed;
 		top: 0;
-		height: 60px;
+		height: 50px;
 		display: block;
 		vertical-align: text-bottom;
+		margin-bottom: 0;
+		z-index: 11;
+		border-bottom: 1px solid black;
+	}
+
+	header:after {
+		display: none;
 	}
 
 	.desktop {
 		display: none;
 	}
 
-	h2.mobile{
+	h2.logo.mobile {
 		display: inline-block;
-		position: absolute;
+		float: left;
 		text-align: left;
-		left: 0.7em;
-		top: 0.3em;
-		margin: 10px;
-		padding:0;
+		margin-left: 15px;
+		margin-top: 5px;
+		padding: 0;
+		color: white;
 	}
 
 	body.ham-active {
@@ -219,22 +222,6 @@ header input:focus, header input:hover {
 
 	h1.it {
 		font-size: 2em;
-	}
-
-
-	nav {
-		position: fixed !important;
-		right: 0 !important;
-		height: 60px;
-		box-shadow: 0 0 15px 25px white;
-		// margin-top: -25px;
-		padding: 0.5em 1em;
-		z-index: 11;
-		background-color: white;
-	}
-
-	nav ul, nav #social, nav form {
-		display: none;
 	}
 
 	// scrolly
@@ -260,8 +247,10 @@ header input:focus, header input:hover {
 		float: right;
 		background-image: image-url('hamburger-150.png');
 		background-size: contain;
-		width: 20px;
-		height: 20px;
+		width: 30px;
+		height: 30px;
+		margin-top: 10px;
+		margin-right: 15px;
 		cursor: pointer;
 		vertical-align: top;
 	}

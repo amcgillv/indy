@@ -75,7 +75,6 @@ $(function() {
     }, 250);
 
     // hamburger button
-    $(".ting, nav, #mobile-nav").addClass("ham-inactive");
     $("#ham").click(function(e) {
         $('body').toggleClass('noscroll');
         $(".overlay").toggleClass("full_page_nav");
