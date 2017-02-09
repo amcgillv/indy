@@ -1,14 +1,57 @@
 <%= render 'layouts/layout_header' %>
 
-  <%= yield %>
+<%= yield %>
 
-  <script id="dsq-count-scr" src="//theindyweb.disqus.com/count.js" async></script>
-  <script>
-    !function(t,h,e,i,n,d,y){t.GoogleAnalyticsObject=e;t[e]||(t[e]=function(){
+<!-- The mobile overlay menu -->
+<div id="myNav" class="overlay">
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <div id="content">
+      <%= form_tag search_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <% end %>
+
+      <div class= "equis"></div>
+      <div class ="clearfix"></div>
+      <ul>
+        <li><div id="social">
+            <%= link_to "https://twitter.com/theindy_tweets" do %>
+                <%= image_tag '/assets/t-150.png' %>
+            <% end %>
+            <%= link_to "https://www.facebook.com/pages/The-Indy/152814864875420" do %>
+                <%= image_tag '/assets/fb-150.png' %>
+            <% end %>
+        </div></li>
+        <li><%= link_to "About", "/about" %></li>
+        <li><%= link_to "Apply", "/apply" %></li>
+        <li><%= link_to "List", "/list" %></li>
+        <li><%= link_to "Masthead", "/masthead" %></li>
+        <li><%= link_to "Subscribe", "/subscribe" %></li>
+      </ul>
+      <ul>
+        <li><%= link_to "Arts", "/feed?s=Arts" %></li>
+        <li><%= link_to "Ephemera", "/feed?s=Ephemera" %></li>
+        <li><%= link_to "Features", "/feed?s=Features" %></li>
+        <li><%= link_to "Interviews", "/feed?s=Interviews" %></li>
+        <li><%= link_to "Literary", "/feed?s=Literary" %></li>
+        <li><%= link_to "Metabolics", "/feed?s=Metabolics" %></li>
+        <li><%= link_to "Metro", "/feed?s=Metro" %></li>
+        <li><%= link_to "News", "/feed?s=News" %></li>
+        <li><%= link_to "Occult", "/feed?s=Occult" %></li>
+        <li><%= link_to "Science & Tech", "/feed?s=Science" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script id="dsq-count-scr" src="//theindyweb.disqus.com/count.js" async></script>
+<script>
+  !function(t,h,e,i,n,d,y){t.GoogleAnalyticsObject=e;t[e]||(t[e]=function(){
     (t[e].q=t[e].q||[]).push(arguments)});t[e].l=+new Date;d=h.createElement(i);
-    y=h.getElementsByTagName(i)[0];d.src=n;y.parentNode.insertBefore(d,y)}
-    (window,document,'ga','script','//www.google-analytics.com/analytics.js');
-    ga('create', 'UA-21672444-1', 'auto'); ga('send', 'pageview');
-  </script>
+  y=h.getElementsByTagName(i)[0];d.src=n;y.parentNode.insertBefore(d,y)}
+  (window,document,'ga','script','//www.google-analytics.com/analytics.js');
+  ga('create', 'UA-21672444-1', 'auto'); ga('send', 'pageview');
+</script>
 </body>
 </html>

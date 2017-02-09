@@ -1,7 +1,7 @@
 <%= render 'layouts/header' %>
 
-<main class="subscribe ting">
-<h2>Give us your email.</h2>
+<main class="subscribe ting center">
+<h2 class="center">Give us your email.</h2>
 <%= form_tag email_path, :method => 'get' do %>
 	<%= text_field_tag :first_name, "", placeholder: "First" %>
 	<br>

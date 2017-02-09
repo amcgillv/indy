@@ -54,10 +54,13 @@ input {
 .subscribe.ting {
 	padding: 1em;
 	text-align: left;
+	input {
+		width: calc(100% - 0.75em);
+	}
 	input[type=submit] {
 		margin-top: 1em;
-		width: 262px;
 		padding: 0.25em;
+		width: 100%;
 		background-color: #dadada;
 	}
 }
