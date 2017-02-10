@@ -1,12 +1,12 @@
-[ in prog  ] add X
+[ in prog    ] add X
                 [x] add X field to admin form
                 [ ] go through and populate the DB. (things are tagged with X!)
-[ seems ok ] new fonts
-[          ] floaty header
-[          ] update masthead
-[          ] mobile logo
-[          ] smaller carousel
-[          ] line wrap in article/row
+[ seems ok   ] new fonts
+[ needs test ] floaty header
+[            ] update masthead
+[            ] mobile logo
+[            ] smaller carousel
+[            ] line wrap in article/row
 
 
 just before release:
@@ -14,9 +14,10 @@ just before release:
 
 
 maybe:
+[          ] more issues link at the end of the carousel
 [          ] issue feed page
 
 
 later:
-[          ] better 404
+[          ] better 404/500
 [          ] update to ruby 2.2.3 - this one is gonna be terrible

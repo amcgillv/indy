@@ -33,56 +33,28 @@ $(function() {
 
     $('.zoom').zoom();
 
-    if ($('.article-cover').length > 0) {
-        $(window).scroll(function () {
-            if ($(window).scrollTop() < window.innerHeight/2) {
-                var opacity = 1 - $(window).scrollTop()/window.innerHeight*2
-                $('.article-cover').css('opacity', opacity)
-            }
-        });
-    }
-
     $('.up-arrow').click(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
     });
     $('.notice, .alert').delay(1400).fadeOut(600);
 
-    // mobile nav. u know how we swag up & down wit the user like swishhhh....
-    // cribbed: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c#.fzbtpcv3b
-    var didScroll = false;
-    var lastScrollTop = 0;
-    var delta = 1;
-    var navbarHeight = $('nav').outerHeight();
     $(window).scroll(function(e) {
-        didScroll = true;
+        if (window.pageYOffset > 200) {
+            $('body').addClass('scrolled');
+        } else {
+            $('body').removeClass('scrolled');
+        }
     });
-    function hasScrolled() {
-        var st = $(window).scrollTop();
-        if (Math.abs(lastScrollTop - st) <= delta) return;
-        if (st > lastScrollTop && st > navbarHeight)
-            $('nav').removeClass('nav-down').addClass('nav-up');
-        else {
-            if(st + $(window).height() < $(document).height())
-                $('nav').removeClass('nav-up').addClass('nav-down');
-        }
-        lastScrollTop = st;
-    }
-    setInterval(function() {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-    }, 250);
 
     // hamburger button
     $("#ham").click(function(e) {
         $('body').toggleClass('noscroll');
-        $(".overlay").toggleClass("full_page_nav");
+        $(".overlay").toggleClass("full-page-nav");
     });
 
     $(".equis").click(function(e) {
         //closing the overlay
-        $(".overlay").toggleClass("full_page_nav");
+        $(".overlay").toggleClass("full-page-nav");
         $('body').toggleClass('noscroll');
     });
 });
