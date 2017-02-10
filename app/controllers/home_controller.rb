@@ -72,7 +72,7 @@ class HomeController < ApplicationController
         startnumber = 1 + page * number
         startnumber = 0 if params[:page].nil?
         endnumber = number + page * number
-        @articles = @articles[startnumber..endnumber]
+        @articles = @articles[startnumber...endnumber]
 
         # grab section title
         if params[:s].nil?
