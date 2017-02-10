@@ -30,7 +30,7 @@ class HomeController < ApplicationController
         @feed_articles = Article.where("published_at < ?", @current_issue.date).limit(20)
 
         # paginate
-        issues_per_page = 20.0
+        issues_per_page = 10.0
         @pages = (@issues.length.to_f / issues_per_page).ceil
 
         page_num = 0

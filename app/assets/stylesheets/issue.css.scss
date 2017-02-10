@@ -5,13 +5,16 @@
 	font-weight: normal;
 }
 
+main#issue-feed {
+    text-align: center;
+}
+
 .issue-row {
     display: inline-block;
     margin: 2.5em;
     text-align: center;
-    max-width: 500px;
+    max-width: 400px;
 }
-
 
 .issue-row p {
     margin: 0;
