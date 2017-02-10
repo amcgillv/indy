@@ -5,10 +5,24 @@ class HomeController < ApplicationController
 	# homepage with issues
 	# show issues, list, homepage nav
 	def index
-		@nav_issue = nil # being explicit
 		# listhe
         @thelist = Thelist.find(1)
 		# load page of issues. 20 per page
+        @issues = Issue.where(:published => true).where("date IS NOT NULL").order("date DESC")
+        @issues = @issues[0..29]
+        @current_issue = @issues[0]
+        @current_articles = @current_issue.articles
+
+        @feed_articles = Article.where("published_at < ?", @current_issue.date).limit(20)
+
+
+        @og_title = "The College Hill Independent"
+        @og_image = "http://www.theindy.org/assets/logo-500-9d75bd63dd39747aea346466eb7ed1ef.png"
+        @og_type = "book"
+	end
+
+    def issue_feed
+        # load page of issues. 20 per page
         @issues = Issue.where(:published => true).where("date IS NOT NULL").order("date DESC")
         @current_issue = @issues[0]
         @current_articles = @current_issue.articles
@@ -23,8 +37,8 @@ class HomeController < ApplicationController
         start_index = 0
 
         if !params[:page].nil?
-        	page_num = params[:page].to_i - 1
-        	start_index = 1 + page_num * issues_per_page
+            page_num = params[:page].to_i - 1
+            start_index = 1 + page_num * issues_per_page
         end
 
         end_index = issues_per_page + page_num * issues_per_page
@@ -33,12 +47,11 @@ class HomeController < ApplicationController
         @og_title = "The College Hill Independent"
         @og_image = "http://www.theindy.org/assets/logo-500-9d75bd63dd39747aea346466eb7ed1ef.png"
         @og_type = "book"
-	end
+    end
 
 	# or, list view. used to view a specific section, or the whole archive.
 	# show articles and homepage nav, as well as section title if it exists
 	def feed
-		@nav_issue = nil
 		if params[:s].nil? # grab all articles
 			@article_articles = Article.where(:published => true)
                                        .where("category != ?", "FTE")

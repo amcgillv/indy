@@ -47,16 +47,12 @@
         </div>
     <% end %>
 
-    <% i = 0 %>
     <% cats.sort.each do |cat, cat_articles| %>
-        <% if i > 0 %>
-            <br><hr>
-        <% end %>
         <h2 class="center upcase"><%= cat %></h2>
         <% cat_articles.each do |a| %>
             <%= render "article/row", article: a %>
         <% end %>
-        <% i = i + 1 %>
+        <br>
     <% end %>
 
     <br><br>

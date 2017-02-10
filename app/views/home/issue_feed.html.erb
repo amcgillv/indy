@@ -1,0 +1,29 @@
+<%= render 'layouts/header' %>
+
+<main>
+    <br>
+    <h1 class="center upcase">All Issues</h1>
+    <br>
+    <% @issues.each do |i| %>
+        <%= render 'issue/row', issue: i %>
+    <% end %>
+
+    <div class="pagination center">
+        <% if  params[:page].to_i == 2 %>
+        <h4><%= link_to "Newer", feed_path(:s => params[:s]) %></h4>
+        <% elsif !params[:page].nil? %>
+        <h4><%= link_to "Newer", feed_path(:s => params[:s], :page => params[:page].to_i - 1) %></h4>
+        <% end -%>
+
+        <% if !params[:page].nil? and params[:page].to_i < @pages %>
+            <p class="noselect">+++</p>
+        <% end %>
+
+        <% if params[:page].nil? && params[:page].to_i < @pages %>
+        <h4><%= link_to "Older", feed_path(:s => params[:s], :page => 2)%></h4>
+        <% elsif params[:page].to_i < @pages %>
+        <h4><%= link_to "Older", feed_path(:s => params[:s], :page => params[:page].to_i + 1)%></h4>
+        <% end -%>
+    </div>
+    <br>
+</main>
