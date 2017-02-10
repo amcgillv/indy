@@ -19,3 +19,15 @@
     }
 }
 
+@media (max-width: 768px) {
+    #toc, #current-issue {
+        padding: 0;
+        h2 {
+            float: none !important;
+        }
+        h2:first-child {
+            padding-bottom: 0;
+        }
+    }
+}
+

@@ -142,12 +142,13 @@ article iframe {
     }
     .article-row {
         margin: 1em;
+        width: calc(100% - 2em);
         h3 {
             padding-top: 0;
         }
         .thumb {
             float: none;
-            width: calc(100% - 2em);
+            width: 100%;
         }
     }
 
