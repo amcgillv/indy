@@ -1,10 +1,7 @@
 [ in prog    ] add X
                 [x] add X field to admin form
                 [ ] go through and populate the DB. (things are tagged with X!)
-[ seems ok   ] new fonts
-[ needs test ] floaty header
-[            ] line wrap in article/row
-
+[ seems ok   ] floaty header
 
 just before release:
 [          ] let the spiders back in / turn off debug
@@ -17,4 +14,4 @@ maybe:
 
 later:
 [          ] better 404/500
-[          ] update to ruby 2.2.3 - this one is gonna be terrible
+[          ] update ruby/rails - this one is gonna be terrible

@@ -1,20 +1,24 @@
+<%# differentiate archives/articles %>
+<% route = (article.is_a?(Archive) ? "/a/#{article.wp_post_id}" : "/#{article.id}") %>
+
 <div class="article-row">
 
     <%# thumbnail! some stuff might not have one, so guard it. %>
     <% unless article.first_image_url.blank? %>
-        <%= link_to (article.is_a?(Archive) ? "/#{article.wp_post_id}" : "/a/#{article.id}") do %>
+        <%= link_to route do %>
             <div class="thumb" style="background-image: url(<%= article.first_image_url %>);"></div>
         <% end %>
     <% end %>
 
+    <div <%= article.first_image_url.blank? ? "" : "class=has-thumb" %>>
     <% if article.subtitle.blank? %>
-        <%= link_to "/#{article.id}" do %>
+        <%= link_to route do %>
             <%# title! everything should have a title. %>
             <h3><%= article.title %></h3>
         <% end %>
     <% else %>
         <%# subtitle! some stuff might not have one, so we guard it. %>
-        <%= link_to "/#{article.id}" do %>
+        <%= link_to route do %>
             <%# title! everything should have a title. %>
             <h3><%= article.title %></h3>
             <h4><%= article.subtitle %></h4>
@@ -44,5 +48,6 @@
             <p><%= (excerpt + ' &hellip;').html_safe %></p>
         <% end %>
     <% end %>
+    </div>
     <div class="clearfix"></div>
 </div>

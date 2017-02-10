@@ -13,9 +13,12 @@
         padding: 0;
         padding-top: 0.25em;
     }
+    .has-thumb {
+        padding-left: 165px;
+    }
     .thumb {
-        margin: 30px 15px 15px 0px;
         float: left;
+        margin: 30px 15px 15px 0px;
         width: 150px;
         height: 150px;
         background-size: cover;
