@@ -74,15 +74,8 @@
                     %>
                     <div class="img-holder" <%= bg.html_safe %>></div>
                     <p class="meta"><%= link_to a.category, "/feed?s=#{a.category.html_safe}" %></p>
-                    <% if a.subtitle.blank? %>
-                        <%= link_to "/#{a.id}" do %>
-                            <h4><%= a.title %></h4>
-                        <% end %>
-                    <% else %>
-                        <%= link_to "/#{a.id}" do %>
-                            <h4><%= a.title %></h4>
-                            <h5><%= a.subtitle %></h5>
-                        <% end %>
+                    <%= link_to "/#{a.id}" do %>
+                        <h4><%= a.title %></h4>
                     <% end %>
                     <% unless a.by.blank? %>
                         <p class="meta"><%= link_people(a.by, "/author") %></p>
