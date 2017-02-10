@@ -1,28 +1,9 @@
 @media only screen and (max-width: 768px) {
-
-	body.ham-active {
-		overflow: hidden;
-	}
-
 	.pdf-link {
 		display: none;
 	}
 
 	.issue-row {
 		margin: 1em;
-	}
-
-	#ham.x {
-		background-image: image-url('equis-150.png');
-	}
-
-	.ting.ham-active, nav.ham-active {
-		margin-right: 240px;
-		margin-left: -240px;
-	    transition: margin linear 0.2s;
-	}
-
-	.ting.ham-inactive, nav.ham-inactive {
-	    transition: margin linear 0.2s;
 	}
 }
