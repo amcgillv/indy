@@ -8,10 +8,10 @@ h1.search-count {
 
 .pinterest-style-holder {
 	-webkit-column-count: 3;
-	-webkit-column-gap: 10px;
+	-webkit-column-gap: 15px;
 	-webkit-column-fill: auto;
 	-moz-column-count: 3;
-	-moz-column-gap: 10px;
+	-moz-column-gap: 15px;
 	-moz-column-fill: auto;
 	break-after: always;
 	column-count: 3;
@@ -23,6 +23,7 @@ h1.search-count {
 .pinterest-style-thing {
 	display: block;
 	break-inside: avoid-column;
+	page-break-inside: avoid;
 	-webkit-column-break-inside: avoid;
 	h5 {
 		padding-bottom: 0;
@@ -107,5 +108,34 @@ input {
 		}
 	}
 
+	.pinterest-style-holder {
+		-webkit-column-count: 2;
+		-webkit-column-gap: 10px;
+		-webkit-column-fill: auto;
+		-moz-column-count: 2;
+		-moz-column-gap: 10px;
+		-moz-column-fill: auto;
+		break-after: always;
+		column-count: 2;
+		column-gap: 10px;
+		column-fill: auto;
+		text-align: center;
+	}
+}
+
+@media (max-width: 450px) {
+	.pinterest-style-holder {
+		-webkit-column-count: auto;
+		-webkit-column-gap: auto;
+		-webkit-column-fill: auto;
+		-moz-column-count: auto;
+		-moz-column-gap: auto;
+		-moz-column-fill: auto;
+		break-after: always;
+		column-count: auto;
+		column-gap: auto;
+		column-fill: auto;
+		text-align: center;
+	}
 }
 

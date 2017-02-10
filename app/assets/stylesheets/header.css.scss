@@ -76,7 +76,7 @@ body.noscroll {
 	display: block;
 	margin-top: 10px;
 	margin-left: 10px;
-	font-size: 110%;
+	font-size: 120%;
 }
 
 .overlay-content ul {
@@ -115,7 +115,8 @@ body.noscroll {
 	height: 30px;
 	width: 30px;
 	margin-top: 10px;
-	margin-right: 2em;
+	margin-right: 15px;
+	cursor: pointer;
 }
 
 .closebtn {
@@ -275,6 +276,10 @@ body.scrolled {
 	}
 }
 
+div.logo.small-mobile {
+	display: none;
+}
+
 @media (max-width: 768px) {
 	#top-links {
 		display: none;
@@ -335,5 +340,42 @@ body.scrolled {
 		margin-right: 15px;
 		cursor: pointer;
 		vertical-align: top;
+	}
+}
+
+@media (max-width: 600px) {
+	h2.logo.mobile {
+		display: none !important;
+	}
+
+	div#mobile-phantom-header, header {
+		height: 60px !important;
+	}
+
+	#ham, .equis {
+		// margin-top: 20px !important;
+		width: 40px !important;
+		height: 40px !important;
+	}
+
+	div.logo.small-mobile {
+		display: block;
+		float: left;
+		margin-left: 15px;
+		margin-top: 1px;
+		h3 {
+			text-align: left;
+			padding: 0;
+			font-size: 20px;
+		}
+		h2 {
+			margin-top: -13px;
+			padding: 0;
+			font-size: 35px;
+		}
+	}
+
+	.overlay-content form {
+		font-size: 150% !important;
 	}
 }
