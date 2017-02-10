@@ -1,7 +1,7 @@
 <%= render 'layouts/header' %>
 
 <main class="feed ting">
-	<h1 class="center"><%= params[:s].nil? ? "The Archive" : params[:s] %></h1>
+	<h1 class="center upcase"><%= params[:s].nil? ? "The Archive" : params[:s] %></h1>
 	<% if !params[:s].nil? && params[:s] == 'Literary' %>
 		<style>
 		div.article-row {

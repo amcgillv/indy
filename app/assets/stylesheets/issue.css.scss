@@ -11,7 +11,7 @@
 }
 
 #carousel {
-    height: 385px;
+    height: 325px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -32,11 +32,11 @@
 .car {
     position: relative;
     display: inline-block;
-    width: 215px;
-    height: 310px;
+    width: 185px;
+    height: 270px;
     background-position: center;
     background-size: contain;
-    margin: 25px;
+    margin: 15px;
     text-align: center;
     img {
         width: 100%;
