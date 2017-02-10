@@ -42,7 +42,7 @@ class HomeController < ApplicationController
         end
 
         end_index = issues_per_page + page_num * issues_per_page
-        @issues = @issues[start_index..end_index]
+        @issues = @issues[start_index...end_index]
 
         @og_title = "The College Hill Independent"
         @og_image = "http://www.theindy.org/assets/logo-500-9d75bd63dd39747aea346466eb7ed1ef.png"
