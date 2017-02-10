@@ -3,6 +3,7 @@ header {
     margin-bottom: 1em;
     position: relative;
     width: 100%;
+    z-index: 12;
 }
 header:after {
 	content: "";
