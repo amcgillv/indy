@@ -5,6 +5,7 @@ header {
     width: 100%;
     z-index: 12;
 }
+
 header:after {
 	content: "";
 	position: absolute;
@@ -281,6 +282,28 @@ body.scrolled {
 
 div.logo.small-mobile {
 	display: none;
+}
+
+@media (min-width: 1024px) {
+	#social a:first-child img,
+	#myNav #social a:first-child img {
+		margin-right: 22.2px !important;
+	}
+
+	#social a:not(:first-child) img,
+	#myNav #social a:not(:first-child) img {
+		margin-right: 36.7px !important;
+	}
+	#sections li:not(:first-child), #top-links ul li:not(:first-child) {
+	    margin-left: 36.7px;
+	}
+	header #header-content {
+		max-width: 1024px;
+	}
+	.overlay-content {
+		max-width: 1024px;
+	}
+
 }
 
 @media (max-width: 768px) {
