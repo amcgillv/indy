@@ -1,0 +1,136 @@
+<% 
+# fun data entry for future web editors
+masthead = Hash.new
+
+masthead['news'] = [
+    "Piper French",
+    "Hannah Maier-Katkin",
+    "Roksana Borzouei",
+]
+masthead['week in review'] = [
+    "Sam Samore",
+]
+masthead['metro'] = [
+    "Shane Potts",
+    "Jane Argodale",
+    "Camila Ruiz-Segovia",
+    "Jack Brook",
+]
+masthead['arts'] = [
+    "Ryan Rosenberg",
+    "Will Weatherly",
+    "Saanya Jain",
+]
+masthead['features'] = [
+    "Julia Tompkins",
+    "Erin West",
+    "Andrew Deck",
+]
+masthead['metabolics'] = [
+    "Dominique Pariso",
+    "Elias Bresnick",
+]
+masthead['science'] = [
+    "Fatima Husain",
+    "Liz Cory",
+]
+masthead['tech'] = [
+    "Jonah Max",
+    "Malcolm Drenttel",
+]
+masthead['ephemera'] = [
+    "Anna Bonesteel",
+]
+masthead['interviews'] = [
+    "Patrick McMenamin",
+]
+masthead['occult'] = [
+    "Lance Gloss",
+    "Robbie Manley",
+]
+masthead['literary'] = [
+    "Stefania Gomez",
+    "Isabelle Doyle",
+]
+masthead['x'] = [
+    "Liby Hays",
+    "Nicole Cochary",
+]
+masthead['list'] = [
+    "Alec Mapes-Frances",
+    "Lisa Borst",
+]
+masthead['staff writers'] = [
+    "Eve Zelickson",
+    "Marianna McMurdock",
+    "Signe Swanson",
+    "Josh Kurtz",
+    "Zack Kligler",
+    "Brionne Frazier",
+    "Chris Packs",
+    "Kion You",
+]
+masthead['design editor'] = [
+    "Chelsea Alexander",
+]
+masthead['designers'] = [
+    "Celeste Matsui",
+    "Meryl Charleston",
+    "Andrew Linder",
+    "Ruby Stenhouse",
+]
+masthead['illustrations editor'] = [
+    "Gabriel Matesanz",
+]
+masthead['staff illustrators'] = [
+    "Frans van Hoek",
+    "Teri Minogue",
+    "Ivan Rios-Fetchko",
+    "Maria Cano-Flavia",
+    "Pia Mileaf-Patel",
+    "Kela Johnson",
+    "Julie Benbassat",
+    "Dorothy Windham",
+    "Anzia Anderson",
+    "Isabelle Rea",
+    "Claire Schlaikjer",
+]
+masthead['copy editor'] = [
+    "Miles Taylor",
+]
+masthead['business'] = [
+    "Lance Gloss",
+]
+masthead['social media'] = [
+    "Jane Argodale",
+    "Signe Swanson ",
+]
+masthead['web'] = [
+    "Charlie Windolf",
+    "Alberta Devor",
+]
+masthead['senior editors'] = [
+    "Alec Mapes-Frances",
+    "Sophie Kasakove",
+    "Lisa Borst",
+    "Jamie Packs",
+]
+masthead['managing editors'] = [
+    "Will Tavlin",
+    "Kelton Ellis",
+    "Dolma Ombadykow",
+]
+%>
+
+<h2>Masthead</h2>
+<div id="masthead" class="pinterest-style-holder">
+<% masthead.each do |section, people| %>
+    <div class="pinterest-style-thing">
+    <h4><%= section %></h4>
+    <% people.each do |them| %>
+        <p><%= them %></p>
+    <% end %>
+    </div>
+<% end %>
+</div>
+

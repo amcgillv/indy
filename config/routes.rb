@@ -26,7 +26,6 @@ Theindy::Application.routes.draw do
   match 'illustrator', :to => 'pages#illustrator'
   match 'email', :to => 'pages#email'
   match 'about', :to => 'pages#about'
-  match 'masthead', :to => 'pages#masthead'
   match 'apply', :to => 'pages#apply'
   match 'list', :to => 'pages#list'
   match 'subscribe', :to => 'pages#subscribe'
