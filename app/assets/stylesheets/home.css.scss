@@ -13,7 +13,11 @@ p.meta {
     display: none;
 }
 
-#fte img {
+#fte {
+    a {
+        text-decoration: underline;
+    }
+    img {
     max-height: 500px;
 }
 
