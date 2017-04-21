@@ -23,7 +23,7 @@ class PagesController < ApplicationController
         if !params[:email].blank? && Email.find_by_email(params[:email]).nil?
             begin 
                 Email.create!(email: params[:email]) # list subscription in model
-            rescue RecordInvalid => e 
+            rescue ActiveRecord::RecordInvalid => e 
                 redirect_to "/not_found"
             else
                 p = {}
@@ -37,16 +37,18 @@ class PagesController < ApplicationController
     end
 
     def alumni
-        @saved = false
+        @saved = 0
         if !params[:name].blank? && !params[:email].blank?
             begin 
                 gy = params[:grad_year].blank? ? 0 : params[:grad_year]
                 Alum.create!(name: params[:name], email: params[:email], grad_year: gy,
                              staff_position: params[:staff_position], job_now: params[:job_now],
                              where_you_live: params[:where_you_live])
-                @saved = true
-            # rescue/
-                # redirect_to "/"
+                @saved = 1
+            rescue ActiveRecord::RecordInvalid => e
+                puts "DAMN"
+                @saved = 2
+                @msg = e
             end
         end
     end
