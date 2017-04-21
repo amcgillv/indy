@@ -15,6 +15,7 @@ Theindy::Application.routes.draw do
     resources :archive
     resources :thelists
     match 'emails'
+    match 'alums'
   end
 
   devise_scope :user do
@@ -29,6 +30,7 @@ Theindy::Application.routes.draw do
   match 'apply', :to => 'pages#apply'
   match 'list', :to => 'pages#list'
   match 'subscribe', :to => 'pages#subscribe'
+  match 'alumni', :to => 'pages#alumni'
 
   match 'feed', :to => 'home#feed', :as => :feed
   match 'issues', :to => 'home#issue_feed', :as => :issues

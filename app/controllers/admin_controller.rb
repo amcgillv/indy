@@ -8,4 +8,8 @@ class AdminController < ApplicationController
       @emails = Email.all
     end
 
+    def alums
+      @alums = Alum.all
+    end
+
 end

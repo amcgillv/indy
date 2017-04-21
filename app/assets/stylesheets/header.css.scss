@@ -4,6 +4,9 @@ header {
     position: relative;
     width: 100%;
     z-index: 12;
+    #header-content ul {
+    	list-style: none;
+    }
 }
 
 header:after {
@@ -23,7 +26,7 @@ header:after {
 header .logo {
 	text-align: center;
 	padding: 0;
-	font-size: 2.35em;
+	font-size: 3.25em;
 }
 
 .noselect {
@@ -207,7 +210,7 @@ header input:focus, header input:hover {
 
 body.scrolled {
 	#mobile-phantom-header {
-		height: 134.53px;
+		height: 164.7px;
 	}
 
 	#top-links {
@@ -244,17 +247,6 @@ body.scrolled {
 		margin-right: 15px;
 		cursor: pointer;
 		vertical-align: top;
-	}
-
-	header {
-		position: fixed;
-		top: 0;
-		height: 50px;
-		display: block;
-		vertical-align: text-bottom;
-		margin-bottom: 0;
-		z-index: 11;
-		border-bottom: 1px solid black;
 	}
 
 	header:after {
@@ -295,7 +287,7 @@ div.logo.small-mobile {
 		margin-right: 36.7px !important;
 	}
 	#sections li:not(:first-child), #top-links ul li:not(:first-child) {
-	    margin-left: 36.7px;
+	    margin-left: 34.95px;
 	}
 	header #header-content {
 		max-width: 1024px;

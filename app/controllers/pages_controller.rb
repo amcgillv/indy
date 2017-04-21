@@ -36,6 +36,18 @@ class PagesController < ApplicationController
         end
     end
 
+    def alumni
+        if !params[:name].blank? && !params[:email].blank?
+            begin 
+                Alum.create!(name: params[:name], email: params[:email], grad_year: params[:grad_year],
+                             staff_position: params[:staff_position], job_now: params[:job_now],
+                             where_you_live: params[:where_you_live])
+            rescue RecordInvalid => e 
+                redirect_to "/not_found"
+            end
+        end
+    end
+
     def all_issues
         @title = "Archive"
         @issues = Issue.order("date DESC")
