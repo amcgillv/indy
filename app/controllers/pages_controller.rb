@@ -37,13 +37,16 @@ class PagesController < ApplicationController
     end
 
     def alumni
+        @saved = false
         if !params[:name].blank? && !params[:email].blank?
             begin 
-                Alum.create!(name: params[:name], email: params[:email], grad_year: params[:grad_year],
+                gy = params[:grad_year].blank? ? 0 : params[:grad_year]
+                Alum.create!(name: params[:name], email: params[:email], grad_year: gy,
                              staff_position: params[:staff_position], job_now: params[:job_now],
                              where_you_live: params[:where_you_live])
-            rescue RecordInvalid => e 
-                redirect_to "/not_found"
+                @saved = true
+            # rescue/
+                # redirect_to "/"
             end
         end
     end
