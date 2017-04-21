@@ -284,21 +284,21 @@ div.logo.small-mobile {
 
 	#social a:not(:first-child) img,
 	#myNav #social a:not(:first-child) img {
-		margin-right: 36.7px !important;
+		margin-right: 33px !important;
 	}
 	#sections li:not(:first-child), #top-links ul li:not(:first-child) {
-	    margin-left: 34.95px;
+	    margin-left: 33px;
 	}
 	header #header-content {
-		max-width: 1024px;
+		max-width: 1000px;
 	}
 	.overlay-content {
-		max-width: 1024px;
+		max-width: 1000px;
 	}
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
 	#top-links {
 		display: none;
 	}
