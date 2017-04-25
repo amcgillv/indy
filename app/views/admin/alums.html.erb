@@ -1,12 +1,24 @@
-<ul>
+<h2>Their Emails</h2>
+<pre><%= (@alums.map  { |a| a.email }).join(", ") %></pre>
+
+<h2>More Extensive With the Details</h2>
+<table style="border:1px solid black;border-collapse:collapse">
+    <tr style="border:1px solid black;"">
+            <td style="border:2px solid black;padding:0.5em;">Name</td>
+            <td style="border:2px solid black;padding:0.5em;">Email</td>
+            <td style="border:2px solid black;padding:0.5em;">Grad Year</td>
+            <td style="border:2px solid black;padding:0.5em;">Role</td>
+            <td style="border:2px solid black;padding:0.5em;">Job Now</td>
+            <td style="border:2px solid black;padding:0.5em;">City</td>
+        </tr>
     <% @alums.each do |a| %>
-        <li>
-            <%= a.name %>
-            <%= a.email %>
-            <%= a.grad_year %>
-            <%= a.staff_position %>
-            <%= a.job_now %>
-            <%= a.where_you_live %>
-        </li>
+        <tr style="border:1px solid black;"">
+            <td style="border:2px solid gray;padding:0.5em;"><%= a.name %></td>
+            <td style="border:2px solid gray;padding:0.5em;"><%= a.email %></td>
+            <td style="border:2px solid gray;padding:0.5em;"><%= a.grad_year %></td>
+            <td style="border:2px solid gray;padding:0.5em;"><%= a.staff_position %></td>
+            <td style="border:2px solid gray;padding:0.5em;"><%= a.job_now %></td>
+            <td style="border:2px solid gray;padding:0.5em;"><%= a.where_you_live %></td>
+        </tr>
     <% end %>
-</ul>
+</table>

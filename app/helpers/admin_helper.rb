@@ -19,6 +19,8 @@ module AdminHelper
             end
         elsif params[:action] == 'emails'
             path = " / Emails"
+        elsif params[:action] == 'alums'
+            path = " / Alums"
         end
         # raw( / #{link_to "Issues", admin_issues_path} / Issue </h1>")
         raw(root + path + caboose)
