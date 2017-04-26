@@ -1,0 +1,35 @@
+<%= render 'layouts/header' %>
+
+
+<main class="store ting">
+<h1 class="center">Store</h1>
+<p style="font-size: 14pt;">As Brown’s (and particularly, UFB’s) financial commitment to the paper <a style="font-weight:bold;" href="http://www.browndailyherald.com/2017/04/18/undergraduate-finance-board-cuts-print-funding-student-publications/">has come into question</a> in the past weeks and months, we are looking to establish alternative funding routes that might give us some leveraging power in future conversations with UFB.</p>
+<p style="font-size: 14pt;">Brown makes direct donations to student groups particularly thorny. The most lenience we have is in exchanging a product for monetary value. While we navigate what options we have in creating tax-deductible donation options with the Office of Advancement for the longterm, this sliding-scale tote bag sale is the temporary solution we’ve come up with! We’re happy to ship them anywhere.</p>
+<p style="font-size: 14pt;">Because of the bureaucratic limits that Brown places on online sales, we’ve gone a little rogue in this offering. This page is not discoverable on our website, except through the alumni sign up form or a direct-URL entry. Please feel free to reach out to the senior editors and current MEs at <a style="font-weight:bold;" href="mailto:theindy@gmail.com">theindy@gmail.com</a> if you have any questions about anything!</p>
+<h3 class="center">Thank you all again for your support!</h3>
+
+<h3 class="center">Indy Tote</h3>
+<div class="center">
+<%= image_tag 'tote.jpeg', width: 300 %>
+</div>
+<br>
+<%# Paypal Button %>
+<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="JDVL3TPRR9546">
+<table style="width:300px;margin:0 auto;">
+<tr><td><input type="hidden" name="on0" value="Name Your Price"></td></tr><tr><td><select name="os0">
+    <option value="Give">Give $25.00 USD</option>
+    <option value="Give">Give $50.00 USD</option>
+    <option value="Give">Give $75.00 USD</option>
+    <option value="Give">Give $100.00 USD</option>
+    <option value="Give">Give $150.00 USD</option>
+    <option value="Give">Give $250.00 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="border:none;width:150px;">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<br><br><br>
+</main>

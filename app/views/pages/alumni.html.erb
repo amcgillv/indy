@@ -4,6 +4,9 @@
 <% if @saved == 1 %>
 <br>
 <h3>Got it, thanks!</h3>
+<p><em>Psst:</em>&nbsp;</p><%= link_to root_path + "store" do %>
+<p style="font-weight: bold;">Help us raise funds by buying an Indy tote bag!</p>
+<% end %>
 <% elsif @saved == 2 %>
 <h3><%= @msg %></h3>
 <% end %>

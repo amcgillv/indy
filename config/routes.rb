@@ -31,6 +31,7 @@ Theindy::Application.routes.draw do
   match 'list', :to => 'pages#list'
   match 'subscribe', :to => 'pages#subscribe'
   match 'alumni', :to => 'pages#alumni'
+  match 'store', :to => 'pages#store'
 
   match 'feed', :to => 'home#feed', :as => :feed
   match 'issues', :to => 'home#issue_feed', :as => :issues
