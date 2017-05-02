@@ -1,5 +1,5 @@
 <%# differentiate archives/articles %>
-<% route = (article.is_a?(Archive) ? "/a/#{article.wp_post_id}" : "/#{article.id}") %>
+<% route = (article.is_a?(Archive) ? "/a/#{article.id}" : "/#{article.id}") %>
 
 <div class="article-row">
 
